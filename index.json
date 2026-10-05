@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-pi-with-payperq",
+      "title": "Using the pi coding agent with PayPerQ",
+      "date": "2026-10-05",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/ppqai-opengraph-banner.png",
+      "ogImage": "/ppqai-opengraph-banner.png",
+      "intro": "Use the pi terminal coding agent with a pay-per-use PayPerQ API key by adding PayPerQ as a custom provider in models.json.",
+      "description": "",
+      "path": "guides/using-pi-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
