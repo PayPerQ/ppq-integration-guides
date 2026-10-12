@@ -4,13 +4,13 @@ slug: using-autoclaw-with-payperq
 date: 2026-02-18
 image: /blog-images/using-autoclaw-with-payperq/autoclaw.png
 ogImage: /blog-images/using-autoclaw-with-payperq/autoclaw.png
-intro: (Retired October 2026 — replaced by FireRouter.) AutoClaw was a smart routing model that analyzed your OpenClaw prompts and automatically picked the right AI model.
+intro: (Retired October 2026: AutoClaw ids are now served by FireRouter.) AutoClaw was a smart routing model that analyzed your OpenClaw prompts and automatically picked the right AI model.
 author: Matt Ahlborg
 tags:
   - Features
 ---
 
-> **AutoClaw was retired in October 2026.** Its replacement is [FireRouter](https://ppq.ai/blog/firerouter-on-payperq): one model id, and Fireworks picks the model for every turn — Claude Opus for the hardest problems, frontier open-weight models for everything else. The `autoclaw` and `autorouter/` model ids now return an error that names the replacement. Migrating is one word: `autoclaw/eco` becomes `firerouter/eco`, and so on. The guide below is kept for reference.
+> **AutoClaw was retired in October 2026.** Its replacement is [FireRouter](https://ppq.ai/blog/firerouter-on-payperq): one model id, and Fireworks picks the model for every turn — Claude Opus for the hardest problems, frontier open-weight models for everything else. Your existing config keeps working: `autoclaw`, `autoclaw/auto`, `autoclaw/eco` and `autoclaw/premium` are now served by their FireRouter equivalents (`firerouter/auto`, `firerouter/eco`, `firerouter/premium`), and your account activity shows which model answered each turn. Custom `autorouter/` ladders are no longer supported and return an error that names the replacement. We recommend switching to the `firerouter` ids when convenient, since the AutoClaw ids will eventually be removed. The guide below is kept for reference.
 
 ## What is AutoClaw?
 
