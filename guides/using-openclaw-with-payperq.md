@@ -91,9 +91,9 @@ This endpoint returns a JSON list of all currently available models on PayPerQ.
 
 Once OpenClaw is running with your PayPerQ configuration, you can verify requests are being processed by checking your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
 
-## Try AutoClaw — Smart Model Routing
+## Try FireRouter — One Model Id, Routed Per Turn
 
-Don't want to pick a model yourself? [AutoClaw](/blog/using-autoclaw-with-payperq) is our intelligent router that automatically selects the best model for each prompt — saving you money on simple questions while using top-tier models when it matters.
+Don't want to pick a model yourself? [FireRouter](https://ppq.ai/blog/firerouter-on-payperq) picks the model for every turn — Claude Opus for the hardest problems, frontier open-weight models for everything else — and you pay the price of the model that answered. Set `firerouter` as your model and you're done.
 
 ## Problems?
 
