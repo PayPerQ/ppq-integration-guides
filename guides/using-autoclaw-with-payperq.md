@@ -4,11 +4,13 @@ slug: using-autoclaw-with-payperq
 date: 2026-02-18
 image: /blog-images/using-autoclaw-with-payperq/autoclaw.png
 ogImage: /blog-images/using-autoclaw-with-payperq/autoclaw.png
-intro: AutoClaw is a smart routing model that analyzes your OpenClaw prompts and automatically picks the right AI model — cutting costs by up to 70%.
+intro: (Retired October 2026 — replaced by FireRouter.) AutoClaw was a smart routing model that analyzed your OpenClaw prompts and automatically picked the right AI model.
 author: Matt Ahlborg
 tags:
   - Features
 ---
+
+> **AutoClaw was retired in October 2026.** Its replacement is [FireRouter](https://ppq.ai/blog/firerouter-on-payperq): one model id, and Fireworks picks the model for every turn — Claude Opus for the hardest problems, frontier open-weight models for everything else. The `autoclaw` and `autorouter/` model ids now return an error that names the replacement. Migrating is one word: `autoclaw/eco` becomes `firerouter/eco`, and so on. The guide below is kept for reference.
 
 ## What is AutoClaw?
 

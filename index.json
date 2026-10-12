@@ -83,7 +83,7 @@
       ],
       "image": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
       "ogImage": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
-      "intro": "AutoClaw is a smart routing model that analyzes your OpenClaw prompts and automatically picks the right AI model — cutting costs by up to 70%.",
+      "intro": "(Retired October 2026 — replaced by FireRouter.) AutoClaw was a smart routing model that analyzed your OpenClaw prompts and automatically picked the right AI model.",
       "description": "",
       "path": "guides/using-autoclaw-with-payperq.md"
     },
