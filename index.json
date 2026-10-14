@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-cline-with-payperq",
+      "title": "Using Cline AI pair programming CLI with PayPerQ",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-cline-with-payperq/cline_og_img.png",
+      "ogImage": "/blog-images/using-cline-with-payperq/cline_og_img.png",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-cline-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -243,20 +257,6 @@
       "intro": "",
       "description": "",
       "path": "guides/using-goose-with-payperq.md"
-    },
-    {
-      "slug": "using-cline-with-payperq",
-      "title": "Using Cline AI pair programming CLI with PayPerQ",
-      "date": "2025-03-24",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-cline-with-payperq/cline_og_img.png",
-      "ogImage": "/blog-images/using-cline-with-payperq/cline_og_img.png",
-      "intro": "",
-      "description": "",
-      "path": "guides/using-cline-with-payperq.md"
     },
     {
       "slug": "using-aider-with-payperq",
