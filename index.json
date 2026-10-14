@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-kilocode-with-payperq",
+      "title": "Using Kilo Code AI pair programming extension with PayPerQ",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-kilocode-with-payperq/Screenshot from 2025-09-03 13-16-05.png",
+      "ogImage": "/blog-images/using-kilocode-with-payperq/Screenshot from 2025-09-03 13-16-05.png",
+      "intro": "Learn how to set up Kilo Code, the AI-powered VS Code extension for pair programming, to work seamlessly with PayPerQ's API.",
+      "description": "",
+      "path": "guides/using-kilocode-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -142,20 +156,6 @@
       "intro": "Learn how to connect JanitorAI's character chat platform with PayPerQ's API for unrestricted AI conversations.",
       "description": "",
       "path": "guides/using-janitorai-with-payperq.md"
-    },
-    {
-      "slug": "using-kilocode-with-payperq",
-      "title": "Using Kilo Code AI pair programming extension with PayPerQ",
-      "date": "2025-09-03",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-kilocode-with-payperq/Screenshot from 2025-09-03 13-16-05.png",
-      "ogImage": "/blog-images/using-kilocode-with-payperq/Screenshot from 2025-09-03 13-16-05.png",
-      "intro": "Learn how to set up Kilo Code, the AI-powered VS Code extension for pair programming, to work seamlessly with PayPerQ's API.",
-      "description": "",
-      "path": "guides/using-kilocode-with-payperq.md"
     },
     {
       "slug": "using-rxresume-with-payperq",
