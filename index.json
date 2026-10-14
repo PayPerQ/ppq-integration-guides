@@ -2,6 +2,21 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-private-tee-models-with-openclaw",
+      "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations",
+        "Privacy"
+      ],
+      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
+      "description": "",
+      "path": "guides/using-private-tee-models-with-openclaw.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -57,21 +72,6 @@
       "intro": "Learn how to integrate OpenCode, the open source AI coding agent, with PayPerQ to access premium AI models including Claude Sonnet 4.6, GPT-5.4, and Gemini 3.",
       "description": "",
       "path": "guides/using-opencode-with-payperq.md"
-    },
-    {
-      "slug": "using-private-tee-models-with-openclaw",
-      "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
-      "date": "2026-03-06",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations",
-        "Privacy"
-      ],
-      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
-      "description": "",
-      "path": "guides/using-private-tee-models-with-openclaw.md"
     },
     {
       "slug": "using-autoclaw-with-payperq",
