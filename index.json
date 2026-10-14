@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-goose-with-payperq",
+      "title": "Using Goose AI CLI with PayPerQ",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-goose-with-payperq/goose.png",
+      "ogImage": "/blog-images/using-goose-with-payperq/goose_og.png",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-goose-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -229,20 +243,6 @@
       "intro": "",
       "description": "",
       "path": "guides/using-openwebui-with-payperq.md"
-    },
-    {
-      "slug": "using-goose-with-payperq",
-      "title": "Using Goose AI CLI with PayPerQ",
-      "date": "2025-03-26",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-goose-with-payperq/goose.png",
-      "ogImage": "/blog-images/using-goose-with-payperq/goose_og.png",
-      "intro": "",
-      "description": "",
-      "path": "guides/using-goose-with-payperq.md"
     },
     {
       "slug": "using-cline-with-payperq",
