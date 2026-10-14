@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-aider-with-payperq",
+      "title": "Using Aider AI pair programming CLI with PayPerQ",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
+      "ogImage": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-aider-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -257,20 +271,6 @@
       "intro": "",
       "description": "",
       "path": "guides/using-cline-with-payperq.md"
-    },
-    {
-      "slug": "using-aider-with-payperq",
-      "title": "Using Aider AI pair programming CLI with PayPerQ",
-      "date": "2025-03-22",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
-      "ogImage": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
-      "intro": "",
-      "description": "",
-      "path": "guides/using-aider-with-payperq.md"
     }
   ]
 }
