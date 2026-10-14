@@ -1,7 +1,7 @@
 ---
 title: AutoClaw Smart Routing — Automatically pick the best model for your OpenClaw
 slug: using-autoclaw-with-payperq
-date: 2026-02-18
+date: 2026-10-14
 image: /blog-images/using-autoclaw-with-payperq/autoclaw.png
 ogImage: /blog-images/using-autoclaw-with-payperq/autoclaw.png
 intro: AutoClaw is a smart routing model that analyzes your OpenClaw prompts and automatically picks the right AI model — cutting costs by up to 70%.
@@ -36,7 +36,7 @@ The entire classification runs on PPQ servers with zero external API calls — i
 | **Complex** | Claude Sonnet 5 | GLM 5.3 | Claude Opus 5 |
 | **Reasoning** | Claude Opus 5 | GLM 5.3 | Claude Opus 5 |
 
-These assignments are updated by PayPerQ as new models are released — you always get the latest and best without changing your configuration.
+These assignments are updated by PayPerQ as new models are released — you always get the latest and best without changing your configuration. The table reflects September 2026; the mapping is set on the PayPerQ side and newer models (for example `claude-opus-5.5`) may have been added since, so treat the table as a snapshot. You can see which models exist with `curl https://api.ppq.ai/v1/models`.
 
 ## Key Capabilities
 
@@ -102,17 +102,27 @@ Put your cheapest/fastest model first and your most capable model last. AutoClaw
 
 - **Exactly four models required.** Any other count — empty, 1, 2, 3, or 5+ — falls back to the default `autoclaw/auto` profile. There is no fuzzy distribution across an incomplete list.
 - **Order is the assignment.** `autorouter/A,B,C,D` is not the same as `autorouter/D,C,B,A`. The first entry handles simple prompts, the last entry handles reasoning.
-- **Slugs or short aliases accepted.** Each entry can be a canonical provider slug (`anthropic/claude-opus-5`, `minimax/minimax-m3`) or a PayPerQ short alias (`claude-opus-5`, `minimax-m3`).
+- **Slugs or short aliases accepted.** Each entry can be a canonical provider slug (`anthropic/claude-opus-5`, `minimax/minimax-m3`) or a PayPerQ short model ID (`claude-opus-5.5`, `glm-5.3`). Look up valid IDs with `curl https://api.ppq.ai/v1/models`.
 - **Unknown entries pass through.** Typos or unrecognized slugs aren't rejected up front — they're forwarded upstream as-is and may return a 404 if the selected tier happens to route to one.
 
 ### Using with OpenClaw
 
-If you're using [OpenClaw](/blog/using-openclaw-with-payperq), add the following to your `~/.openclaw/openclaw.json`:
+You need OpenClaw installed and its first-run onboarding finished. If you don't have it yet, the official installer is:
+
+```bash
+curl -fsSL https://openclaw.ai/install.sh | bash
+```
+
+It installs OpenClaw and then starts the onboarding wizard. Complete it before continuing; the gateway won't start on a config that has no `gateway.mode` set. See [Using OpenClaw with PayPerQ](/blog/using-openclaw-with-payperq) for the full walkthrough.
+
+Then get your API key from [ppq.ai/api-docs](https://ppq.ai/api-docs) and add the following to your `~/.openclaw/openclaw.json`:
 
 ```json
 {
   "env": {
-    "PPQ_API_KEY": "sk-YOUR_API_KEY_HERE"
+    "vars": {
+      "PPQ_API_KEY": "sk-YOUR_API_KEY_HERE"
+    }
   },
   "models": {
     "mode": "merge",
@@ -142,15 +152,37 @@ If you're using [OpenClaw](/blog/using-openclaw-with-payperq), add the following
 
 **Important:** Replace `sk-YOUR_API_KEY_HERE` with your actual PayPerQ API key from [ppq.ai/api-docs](https://ppq.ai/api-docs). If you already have an `openclaw.json` with other settings, merge these fields into your existing config rather than replacing it.
 
-Then restart the gateway:
+**Note:** Current OpenClaw versions only accept environment variables under `env.vars`. A config that puts `PPQ_API_KEY` directly under `env` (the layout older versions of this guide showed) is rejected with `env: Unrecognized key: "PPQ_API_KEY"`. If you see that error, either move the key under `vars` as shown above, or run `openclaw doctor --fix`, which moves it for you.
+
+Check that OpenClaw accepts the file:
+
+```bash
+openclaw config validate
+```
+
+It should answer `Config valid`. Then restart the gateway:
 
 ```bash
 openclaw gateway restart
 ```
 
+`openclaw gateway restart` restarts the installed gateway service (launchd, systemd or Windows scheduled task). If you run the gateway in the foreground instead, for example inside a container without systemd, stop it and start it again with `openclaw gateway run`.
+
+Finally, confirm the model is registered:
+
+```bash
+openclaw models list
+```
+
+`ppq/autoclaw` should appear in the list and be tagged `default`. Send a prompt (for example with `openclaw tui`) and check your usage at [ppq.ai/account-activity](https://ppq.ai/account-activity).
+
 ## New to OpenClaw?
 
 If you haven't set up OpenClaw with PayPerQ yet, check out our guide: [Using OpenClaw with PayPerQ](/blog/using-openclaw-with-payperq). It walks you through downloading OpenClaw, getting your API key, and configuring it to use PayPerQ's hundreds of AI models — all in just a few minutes.
+
+## Problems?
+
+Ask the customer chatbot at the bottom right of [ppq.ai](https://ppq.ai), or reach us on [Telegram](https://t.me/+ZjJDTazIrV0zNDFh) or [Discord](https://discord.gg/BmMntEShYg).
 
 ## What is PayPerQ?
 

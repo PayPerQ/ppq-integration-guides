@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-autoclaw-with-payperq",
+      "title": "AutoClaw Smart Routing — Automatically pick the best model for your OpenClaw",
+      "date": "2026-10-14",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Features"
+      ],
+      "image": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
+      "ogImage": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
+      "intro": "AutoClaw is a smart routing model that analyzes your OpenClaw prompts and automatically picks the right AI model — cutting costs by up to 70%.",
+      "description": "",
+      "path": "guides/using-autoclaw-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -72,20 +86,6 @@
       "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
       "description": "",
       "path": "guides/using-private-tee-models-with-openclaw.md"
-    },
-    {
-      "slug": "using-autoclaw-with-payperq",
-      "title": "AutoClaw Smart Routing — Automatically pick the best model for your OpenClaw",
-      "date": "2026-02-18",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Features"
-      ],
-      "image": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
-      "ogImage": "/blog-images/using-autoclaw-with-payperq/autoclaw.png",
-      "intro": "AutoClaw is a smart routing model that analyzes your OpenClaw prompts and automatically picks the right AI model — cutting costs by up to 70%.",
-      "description": "",
-      "path": "guides/using-autoclaw-with-payperq.md"
     },
     {
       "slug": "using-openclaw-with-payperq",
