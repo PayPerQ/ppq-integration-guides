@@ -109,7 +109,9 @@ for (const file of files) {
   });
 }
 
-index.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : a.slug.localeCompare(b.slug)));
+// Sorted by slug, not date: a guide update then only changes its own entry, so concurrent
+// guide PRs do not conflict on index.json. Consumers sort by date themselves.
+index.sort((a, b) => a.slug.localeCompare(b.slug));
 const json = JSON.stringify({ version: 1, guides: index }, null, 2) + '\n';
 const indexPath = path.join(root, 'index.json');
 

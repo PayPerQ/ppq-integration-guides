@@ -2,76 +2,18 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-codex-with-payperq",
-      "title": "Using OpenAI Codex with PayPerQ",
-      "date": "2026-07-10",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations",
-        "Tools"
-      ],
-      "image": "/blog-images/using-codex-with-payperq/cover.jpg",
-      "ogImage": "/blog-images/using-codex-with-payperq/cover.jpg",
-      "intro": "Run OpenAI Codex — the CLI, IDE extension, and desktop app — with a pay-per-use PayPerQ API key instead of a ChatGPT subscription. Works with GPT models out of the box, and even Claude, Gemini, and GLM with one extra config line. Fully tested and verified.",
-      "description": "",
-      "path": "guides/using-codex-with-payperq.md"
-    },
-    {
-      "slug": "using-claude-desktop-with-payperq",
-      "title": "Using Claude Desktop with PayPerQ",
-      "date": "2026-04-23",
+      "slug": "using-aider-with-payperq",
+      "title": "Using Aider AI pair programming CLI with PayPerQ",
+      "date": "2025-03-22",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
-      "ogImage": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
-      "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
+      "image": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
+      "ogImage": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
+      "intro": "",
       "description": "",
-      "path": "guides/using-claude-desktop-with-payperq.md"
-    },
-    {
-      "slug": "using-hermes-with-payperq",
-      "title": "Using Hermes Agent with PayPerQ",
-      "date": "2026-04-20",
-      "author": "Rafael",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
-      "description": "",
-      "path": "guides/using-hermes-with-payperq.md"
-    },
-    {
-      "slug": "using-opencode-with-payperq",
-      "title": "Using OpenCode AI Coding Agent with PayPerQ",
-      "date": "2026-03-13",
-      "author": "Thomas Weiss",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
-      "ogImage": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
-      "intro": "Learn how to integrate OpenCode, the open source AI coding agent, with PayPerQ to access premium AI models including Claude Sonnet 4.6, GPT-5.4, and Gemini 3.",
-      "description": "",
-      "path": "guides/using-opencode-with-payperq.md"
-    },
-    {
-      "slug": "using-private-tee-models-with-openclaw",
-      "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
-      "date": "2026-03-06",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations",
-        "Privacy"
-      ],
-      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
-      "description": "",
-      "path": "guides/using-private-tee-models-with-openclaw.md"
+      "path": "guides/using-aider-with-payperq.md"
     },
     {
       "slug": "using-autoclaw-with-payperq",
@@ -88,20 +30,6 @@
       "path": "guides/using-autoclaw-with-payperq.md"
     },
     {
-      "slug": "using-openclaw-with-payperq",
-      "title": "Using OpenClaw with PayPerQ",
-      "date": "2026-01-30",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
-      "ogImage": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
-      "intro": "Learn how to configure OpenClaw (Clawdbot) to use PayPerQ's API for pay-per-use access to Claude and hundreds of other AI models.",
-      "description": "",
-      "path": "guides/using-openclaw-with-payperq.md"
-    },
-    {
       "slug": "using-claude-code-with-payperq",
       "title": "Using Claude Code with PayPerQ",
       "date": "2026-01-13",
@@ -116,6 +44,49 @@
       "path": "guides/using-claude-code-with-payperq.md"
     },
     {
+      "slug": "using-claude-desktop-with-payperq",
+      "title": "Using Claude Desktop with PayPerQ",
+      "date": "2026-04-23",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
+      "ogImage": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
+      "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
+      "description": "",
+      "path": "guides/using-claude-desktop-with-payperq.md"
+    },
+    {
+      "slug": "using-cline-with-payperq",
+      "title": "Using Cline AI pair programming CLI with PayPerQ",
+      "date": "2025-03-24",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-cline-with-payperq/cline_og_img.png",
+      "ogImage": "/blog-images/using-cline-with-payperq/cline_og_img.png",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-cline-with-payperq.md"
+    },
+    {
+      "slug": "using-codex-with-payperq",
+      "title": "Using OpenAI Codex with PayPerQ",
+      "date": "2026-07-10",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations",
+        "Tools"
+      ],
+      "image": "/blog-images/using-codex-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-codex-with-payperq/cover.jpg",
+      "intro": "Run OpenAI Codex — the CLI, IDE extension, and desktop app — with a pay-per-use PayPerQ API key instead of a ChatGPT subscription. Works with GPT models out of the box, and even Claude, Gemini, and GLM with one extra config line. Fully tested and verified.",
+      "description": "",
+      "path": "guides/using-codex-with-payperq.md"
+    },
+    {
       "slug": "using-cursor-with-payperq",
       "title": "Using Cursor AI Editor with PayPerQ",
       "date": "2025-12-29",
@@ -128,6 +99,34 @@
       "intro": "Learn how to integrate Cursor, the AI-powered code editor, with PayPerQ for enhanced development workflows.",
       "description": "A comprehensive guide on using Cursor AI editor with PayPerQ",
       "path": "guides/using-cursor-with-payperq.md"
+    },
+    {
+      "slug": "using-goose-with-payperq",
+      "title": "Using Goose AI CLI with PayPerQ",
+      "date": "2025-03-26",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-goose-with-payperq/goose.png",
+      "ogImage": "/blog-images/using-goose-with-payperq/goose_og.png",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-goose-with-payperq.md"
+    },
+    {
+      "slug": "using-hermes-with-payperq",
+      "title": "Using Hermes Agent with PayPerQ",
+      "date": "2026-04-20",
+      "author": "Rafael",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
+      "description": "",
+      "path": "guides/using-hermes-with-payperq.md"
     },
     {
       "slug": "using-janitorai-with-payperq",
@@ -158,34 +157,6 @@
       "path": "guides/using-kilocode-with-payperq.md"
     },
     {
-      "slug": "using-rxresume-with-payperq",
-      "title": "Using RxResume with PayPerQ",
-      "date": "2025-08-25",
-      "author": "Thomas Weiß",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-rxresume-with-payperq/rxresumedark.svg",
-      "ogImage": "/blog-images/using-rxresume-with-payperq/rxresumedark.svg",
-      "intro": "RxResume is a free, open-source resume builder with AI integration capabilities that works seamlessly with PayPerQ's diverse model selection for enhanced resume writing.",
-      "description": "",
-      "path": "guides/using-rxresume-with-payperq.md"
-    },
-    {
-      "slug": "using-msty-with-payperq",
-      "title": "Using Msty Studio with PayPerQ",
-      "date": "2025-08-19",
-      "author": "Thomas Weiß",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-msty-with-payperq/msty_logo.png",
-      "ogImage": "/blog-images/using-msty-with-payperq/msty_logo.png",
-      "intro": "Msty Studio is a privacy-first AI interface that supports both local and online models, offering advanced features like Knowledge Stacks and Personas while keeping your data secure.",
-      "description": "",
-      "path": "guides/using-msty-with-payperq.md"
-    },
-    {
       "slug": "using-mkstacks-with-payperq",
       "title": "Using MKStack to Build Nostr Apps with PayPerQ",
       "date": "2025-07-22",
@@ -203,18 +174,46 @@
       "path": "guides/using-mkstacks-with-payperq.md"
     },
     {
-      "slug": "using-roo-with-payperq",
-      "title": "Using Roo AI pair programming extension with PayPerQ",
-      "date": "2025-07-21",
+      "slug": "using-msty-with-payperq",
+      "title": "Using Msty Studio with PayPerQ",
+      "date": "2025-08-19",
       "author": "Thomas Weiß",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-roo-with-payperq/roo_og_img.png",
-      "ogImage": "/blog-images/using-roo-with-payperq/roo_og_img.png",
-      "intro": "",
+      "image": "/blog-images/using-msty-with-payperq/msty_logo.png",
+      "ogImage": "/blog-images/using-msty-with-payperq/msty_logo.png",
+      "intro": "Msty Studio is a privacy-first AI interface that supports both local and online models, offering advanced features like Knowledge Stacks and Personas while keeping your data secure.",
       "description": "",
-      "path": "guides/using-roo-with-payperq.md"
+      "path": "guides/using-msty-with-payperq.md"
+    },
+    {
+      "slug": "using-openclaw-with-payperq",
+      "title": "Using OpenClaw with PayPerQ",
+      "date": "2026-01-30",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
+      "ogImage": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
+      "intro": "Learn how to configure OpenClaw (Clawdbot) to use PayPerQ's API for pay-per-use access to Claude and hundreds of other AI models.",
+      "description": "",
+      "path": "guides/using-openclaw-with-payperq.md"
+    },
+    {
+      "slug": "using-opencode-with-payperq",
+      "title": "Using OpenCode AI Coding Agent with PayPerQ",
+      "date": "2026-03-13",
+      "author": "Thomas Weiss",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
+      "ogImage": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
+      "intro": "Learn how to integrate OpenCode, the open source AI coding agent, with PayPerQ to access premium AI models including Claude Sonnet 4.6, GPT-5.4, and Gemini 3.",
+      "description": "",
+      "path": "guides/using-opencode-with-payperq.md"
     },
     {
       "slug": "using-openwebui-with-payperq",
@@ -231,46 +230,47 @@
       "path": "guides/using-openwebui-with-payperq.md"
     },
     {
-      "slug": "using-goose-with-payperq",
-      "title": "Using Goose AI CLI with PayPerQ",
-      "date": "2025-03-26",
+      "slug": "using-private-tee-models-with-openclaw",
+      "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
+      "date": "2026-03-06",
       "author": "Matt Ahlborg",
       "tags": [
-        "Third Party Integrations"
+        "Third Party Integrations",
+        "Privacy"
       ],
-      "image": "/blog-images/using-goose-with-payperq/goose.png",
-      "ogImage": "/blog-images/using-goose-with-payperq/goose_og.png",
-      "intro": "",
+      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
       "description": "",
-      "path": "guides/using-goose-with-payperq.md"
+      "path": "guides/using-private-tee-models-with-openclaw.md"
     },
     {
-      "slug": "using-cline-with-payperq",
-      "title": "Using Cline AI pair programming CLI with PayPerQ",
-      "date": "2025-03-24",
-      "author": "Matt Ahlborg",
+      "slug": "using-roo-with-payperq",
+      "title": "Using Roo AI pair programming extension with PayPerQ",
+      "date": "2025-07-21",
+      "author": "Thomas Weiß",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-cline-with-payperq/cline_og_img.png",
-      "ogImage": "/blog-images/using-cline-with-payperq/cline_og_img.png",
+      "image": "/blog-images/using-roo-with-payperq/roo_og_img.png",
+      "ogImage": "/blog-images/using-roo-with-payperq/roo_og_img.png",
       "intro": "",
       "description": "",
-      "path": "guides/using-cline-with-payperq.md"
+      "path": "guides/using-roo-with-payperq.md"
     },
     {
-      "slug": "using-aider-with-payperq",
-      "title": "Using Aider AI pair programming CLI with PayPerQ",
-      "date": "2025-03-22",
-      "author": "Matt Ahlborg",
+      "slug": "using-rxresume-with-payperq",
+      "title": "Using RxResume with PayPerQ",
+      "date": "2025-08-25",
+      "author": "Thomas Weiß",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
-      "ogImage": "/blog-images/using-aider-with-payperq/aider_logo.jpg",
-      "intro": "",
+      "image": "/blog-images/using-rxresume-with-payperq/rxresumedark.svg",
+      "ogImage": "/blog-images/using-rxresume-with-payperq/rxresumedark.svg",
+      "intro": "RxResume is a free, open-source resume builder with AI integration capabilities that works seamlessly with PayPerQ's diverse model selection for enhanced resume writing.",
       "description": "",
-      "path": "guides/using-aider-with-payperq.md"
+      "path": "guides/using-rxresume-with-payperq.md"
     }
   ]
 }
