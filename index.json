@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-pi-with-payperq",
+      "title": "Using the pi coding agent with PayPerQ",
+      "date": "2026-10-15",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-pi-with-payperq/06-test-prompt-answer.png",
+      "ogImage": "/blog-images/using-pi-with-payperq/06-test-prompt-answer.png",
+      "intro": "",
+      "description": "",
+      "path": "guides/using-pi-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
