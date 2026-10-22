@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-pi-with-payperq",
+      "title": "Using Pi with PayPerQ",
+      "date": "2026-10-22",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-pi-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-pi-with-payperq/cover.jpg",
+      "intro": "Run the Pi terminal coding agent on pay-per-use PayPerQ models instead of a subscription, with the key stored in Pi's own credential file.",
+      "description": "",
+      "path": "guides/using-pi-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
