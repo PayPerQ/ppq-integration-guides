@@ -1,0 +1,40 @@
+name: Problem in a guide
+description: A step in a guide does not work, or something is wrong or missing.
+title: "[guide] "
+labels: [guide-problem]
+body:
+  - type: input
+    id: guide
+    attributes:
+      label: Guide
+      description: The page URL or the file name under guides/.
+      placeholder: https://ppq.ai/blog/using-aider-with-payperq
+    validations:
+      required: true
+  - type: input
+    id: step
+    attributes:
+      label: Step
+      description: Which step or section.
+      placeholder: "3. Add PayPerQ as a provider"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead. Paste error messages as text. Do not include your API key.
+    validations:
+      required: true
+  - type: input
+    id: versions
+    attributes:
+      label: Tool version and operating system
+      placeholder: "aider 0.86.1, Ubuntu 24.04"
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Fix, if you know it
+      description: Optional. If you know the right step, you can also open a pull request directly with the pencil icon on the file.

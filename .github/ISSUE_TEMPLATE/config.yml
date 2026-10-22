@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Request a guide for a new tool
+    url: https://github.com/PayPerQ/ppq-integration-guides/issues/new?title=%5Bnew%20guide%5D%20
+    about: Tell us which tool and link its official docs.

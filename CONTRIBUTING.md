@@ -13,9 +13,11 @@ An approved pull request is the sign-off to publish. Nothing is published before
 
 ## Editing a guide
 
+For a small fix you do not need git: open the file under `guides/` on GitHub, click the pencil icon, make the change and choose "Propose changes". GitHub forks the repository and opens the pull request for you.
+
 - Change only what you have checked yourself, and say in the pull request how you checked it (tool version, OS, what you ran).
 - Use model IDs from the live catalog: [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models).
-- Never paste a real API key, in text or in a screenshot. Use a placeholder like `sk-...`.
+- Never paste a real API key, in text or in a screenshot. Use the placeholder `<your PayPerQ API key>`.
 - Plain Markdown only. Raw HTML is not rendered on ppq.ai.
 
 ## Adding a guide
@@ -38,7 +40,9 @@ An approved pull request is the sign-off to publish. Nothing is published before
    ```
 
 3. Put images in `blog-images/<slug>/`.
-4. Cover: what the tool is, install, adding PayPerQ as the provider (base URL `https://api.ppq.ai` and API key), choosing a model, a test prompt, and troubleshooting.
+4. Cover: what the tool is, install, adding PayPerQ as the provider (base URL `https://api.ppq.ai` and API key), choosing a model, a test prompt, and troubleshooting. Prerequisites list only specific items (account and key, a runtime version the tool requires), not filler like "internet access".
+5. Do not add "What is PayPerQ?" or "Getting Started" sections: ppq.ai appends them to every guide.
+6. When you show a model list or config, say it is an example and link the live catalog [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models).
 
 ## Before opening the pull request
 
