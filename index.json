@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-strix-with-payperq",
+      "title": "Using Strix with PayPerQ",
+      "date": "2026-10-28",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-strix-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-strix-with-payperq/cover.jpg",
+      "intro": "Run Strix, the open-source AI pentesting tool, on pay-per-use PayPerQ models instead of a separate model subscription.",
+      "description": "",
+      "path": "guides/using-strix-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
