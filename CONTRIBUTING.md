@@ -14,6 +14,7 @@ An approved pull request is the sign-off to publish. Nothing is published before
 ## Editing a guide
 
 - Change only what you have checked yourself, and say in the pull request how you checked it (tool version, OS, what you ran).
+- Leave `date` alone (it is the publication date) and set `updated: YYYY-MM-DD` to today when you change the guide's content, so readers see it was revised.
 - Use model IDs from the live catalog: [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models).
 - Never paste a real API key, in text or in a screenshot. Use a placeholder like `sk-...`.
 - Plain Markdown only. Raw HTML is not rendered on ppq.ai.
