@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-claude-desktop-with-payperq",
+      "title": "Using Claude Desktop with PayPerQ",
+      "date": "2026-10-28",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
+      "ogImage": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
+      "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
+      "description": "",
+      "path": "guides/using-claude-desktop-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -15,20 +29,6 @@
       "intro": "Run OpenAI Codex — the CLI, IDE extension, and desktop app — with a pay-per-use PayPerQ API key instead of a ChatGPT subscription. Works with GPT models out of the box, and even Claude, Gemini, and GLM with one extra config line. Fully tested and verified.",
       "description": "",
       "path": "guides/using-codex-with-payperq.md"
-    },
-    {
-      "slug": "using-claude-desktop-with-payperq",
-      "title": "Using Claude Desktop with PayPerQ",
-      "date": "2026-04-23",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
-      "ogImage": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
-      "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
-      "description": "",
-      "path": "guides/using-claude-desktop-with-payperq.md"
     },
     {
       "slug": "using-hermes-with-payperq",
