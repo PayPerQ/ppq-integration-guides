@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-openwebui-with-payperq",
+      "title": "Using OpenWebUI with PayPerQ",
+      "date": "2026-10-28",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
+      "ogImage": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
+      "intro": "Connect a self-hosted Open WebUI to PayPerQ with one connection, then pick a model and, optionally, set up image generation and editing.",
+      "description": "",
+      "path": "guides/using-openwebui-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -215,20 +229,6 @@
       "intro": "",
       "description": "",
       "path": "guides/using-roo-with-payperq.md"
-    },
-    {
-      "slug": "using-openwebui-with-payperq",
-      "title": "Using OpenWebUI with PayPerQ",
-      "date": "2025-04-02",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
-      "ogImage": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
-      "intro": "",
-      "description": "",
-      "path": "guides/using-openwebui-with-payperq.md"
     },
     {
       "slug": "using-goose-with-payperq",
