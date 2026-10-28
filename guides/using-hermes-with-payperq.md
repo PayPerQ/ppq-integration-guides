@@ -138,9 +138,9 @@ To use private models with Hermes, you'll need the [PPQ Private Mode Proxy](http
 
 ![PayPerQ](/ppqai-opengraph-banner.png)
 
-PayPerQ is the private way to use the big-name AI models. Chat, image, video and audio models from Anthropic, OpenAI, Google, xAI and the open-source labs, all in one place, with no account and no subscription. You top up a balance with crypto or a card, from as little as 10 cents, and pay only for what you use. Most users spend about $4 a month, against $20+ for a single ChatGPT subscription.
+PayPerQ is the private way to use AI. You get the big-name models from Anthropic, OpenAI, Google and xAI, the best open-source models, and TEE models that run inside a hardware enclave where not even the model's host can see your data. Chat, image, video and audio, all in one place, with no account and no subscription. You top up a balance with crypto or a card, from as little as 10 cents, and pay only for what you use. Most users spend about $4 a month, against $20+ for a single ChatGPT subscription.
 
-Privacy is built in rather than bolted on. Every chat request is served inside a secure enclave that PayPerQ's servers, staff and logs cannot read into, so PayPerQ never sees your prompts or responses. For the most sensitive work, TEE models run the model itself inside a hardware enclave, so not even the model's host can read your data.
+Privacy is built in rather than bolted on. Every chat request is served inside a secure enclave that PayPerQ's servers, staff and logs cannot read into, so PayPerQ never sees your prompts or responses. Choose a TEE model and the model's host cannot read them either.
 
 ### Why Use PayPerQ?
 
