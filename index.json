@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-hermes-with-payperq",
+      "title": "Using Hermes Agent with PayPerQ",
+      "date": "2026-10-28",
+      "author": "Rafael",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
+      "description": "",
+      "path": "guides/using-hermes-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -29,20 +43,6 @@
       "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
       "description": "",
       "path": "guides/using-claude-desktop-with-payperq.md"
-    },
-    {
-      "slug": "using-hermes-with-payperq",
-      "title": "Using Hermes Agent with PayPerQ",
-      "date": "2026-04-20",
-      "author": "Rafael",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
-      "description": "",
-      "path": "guides/using-hermes-with-payperq.md"
     },
     {
       "slug": "using-opencode-with-payperq",
