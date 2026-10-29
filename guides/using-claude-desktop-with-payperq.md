@@ -3,8 +3,8 @@ title: Using Claude Desktop with PayPerQ
 slug: using-claude-desktop-with-payperq
 date: 2026-04-23
 updated: 2026-10-28
-image: /blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg
-ogImage: /blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg
+image: /blog-images/using-claude-desktop-with-payperq/cover.jpg
+ogImage: /blog-images/using-claude-desktop-with-payperq/cover.jpg
 intro: Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.
 author: Matt Ahlborg
 tags:
