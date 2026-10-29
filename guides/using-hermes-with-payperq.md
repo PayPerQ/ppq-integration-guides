@@ -1,7 +1,8 @@
 ---
 title: Using Hermes Agent with PayPerQ
 slug: using-hermes-with-payperq
-date: 2026-10-28
+date: 2026-04-20
+updated: 2026-10-28
 image: /blog-images/using-hermes-with-payperq/hermes.webp
 ogImage: /blog-images/using-hermes-with-payperq/hermes.webp
 intro: Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.
@@ -31,7 +32,7 @@ You can learn more at the [Hermes Agent website](https://hermes-agent.nousresear
 - Git, curl, tar and a SHA-256 utility on Linux and macOS: the Hermes docs say "For the POSIX source script, provide Git, curl, tar, and SHA-256 utilities."
 - A model with at least 64,000 tokens of context that supports tool calling: the Hermes docs say "Hermes Agent requires at least 64,000 tokens of context for agent use with tools."
 
-## Step by Step Set Up
+## Step by Step Configuration
 
 > **Already have Hermes installed?** Skip to [Adding PayPerQ to an existing Hermes installation →](#already-have-hermes-installed)
 
@@ -164,7 +165,7 @@ To see the live list, run:
 curl https://api.ppq.ai/v1/models
 ```
 
-## Verify Your Usage
+## Verify Your Setup
 
 You can also confirm that requests are being processed by checking your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
 
@@ -219,4 +220,6 @@ No account creation needed—just fund and go.
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right of [ppq.ai](https://ppq.ai), in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh), or on [Discord](https://discord.gg/BmMntEShYg).
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-hermes-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
