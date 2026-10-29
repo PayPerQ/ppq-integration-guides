@@ -1,7 +1,8 @@
 ---
 title: Using Claude Desktop with PayPerQ
 slug: using-claude-desktop-with-payperq
-date: 2026-10-28
+date: 2026-04-23
+updated: 2026-10-28
 image: /blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg
 ogImage: /blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg
 intro: Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.
@@ -25,7 +26,7 @@ Claude Desktop normally requires a paid Claude subscription billed to a credit c
 
 ---
 
-## Step by Step Set Up
+## Step by Step Setup
 
 ### 1. Install Claude Desktop
 
@@ -190,4 +191,6 @@ No account creation needed—just fund and go.
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right of [ppq.ai](https://ppq.ai), or drop into our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh).
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-claude-desktop-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
