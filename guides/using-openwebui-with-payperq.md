@@ -3,8 +3,8 @@ title: Using OpenWebUI with PayPerQ
 slug: using-openwebui-with-payperq
 date: 2025-04-02
 updated: 2026-10-28
-image: /blog-images/using-openwebui-with-payperq/open_web_ui.png
-ogImage: /blog-images/using-openwebui-with-payperq/open_web_ui.png
+image: /blog-images/using-openwebui-with-payperq/cover.jpg
+ogImage: /blog-images/using-openwebui-with-payperq/cover.jpg
 intro: Connect a self-hosted Open WebUI to PayPerQ with one connection, then pick a model and, optionally, set up image generation and editing.
 author: Matt Ahlborg
 tags:

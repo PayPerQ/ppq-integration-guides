@@ -225,8 +225,8 @@
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
-      "ogImage": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
+      "image": "/blog-images/using-openwebui-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openwebui-with-payperq/cover.jpg",
       "intro": "Connect a self-hosted Open WebUI to PayPerQ with one connection, then pick a model and, optionally, set up image generation and editing.",
       "description": "",
       "path": "guides/using-openwebui-with-payperq.md"
