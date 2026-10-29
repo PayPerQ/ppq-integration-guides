@@ -1,7 +1,8 @@
 ---
 title: Using OpenWebUI with PayPerQ
 slug: using-openwebui-with-payperq
-date: 2026-10-28
+date: 2025-04-02
+updated: 2026-10-28
 image: /blog-images/using-openwebui-with-payperq/open_web_ui.png
 ogImage: /blog-images/using-openwebui-with-payperq/open_web_ui.png
 intro: Connect a self-hosted Open WebUI to PayPerQ with one connection, then pick a model and, optionally, set up image generation and editing.
@@ -122,4 +123,6 @@ With these settings, an edit request (an existing image plus the prompt "make th
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right of ppq.ai, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-openwebui-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
