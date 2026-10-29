@@ -110,8 +110,8 @@
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
-      "ogImage": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
+      "image": "/blog-images/using-claude-code-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-claude-code-with-payperq/cover.jpg",
       "intro": "Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.",
       "description": "",
       "path": "guides/using-claude-code-with-payperq.md"

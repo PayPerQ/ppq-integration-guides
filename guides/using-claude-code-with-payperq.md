@@ -3,8 +3,8 @@ title: Using Claude Code with PayPerQ
 slug: using-claude-code-with-payperq
 date: 2026-01-13
 updated: 2026-10-28
-image: /blog-images/using-claude-code-with-payperq/claude_code.webp
-ogImage: /blog-images/using-claude-code-with-payperq/claude_code.webp
+image: /blog-images/using-claude-code-with-payperq/cover.jpg
+ogImage: /blog-images/using-claude-code-with-payperq/cover.jpg
 intro: Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.
 author: Matt Ahlborg
 tags:
