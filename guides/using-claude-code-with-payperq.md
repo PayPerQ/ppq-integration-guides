@@ -1,7 +1,8 @@
 ---
 title: Using Claude Code with PayPerQ
 slug: using-claude-code-with-payperq
-date: 2026-10-28
+date: 2026-01-13
+updated: 2026-10-28
 image: /blog-images/using-claude-code-with-payperq/claude_code.webp
 ogImage: /blog-images/using-claude-code-with-payperq/claude_code.webp
 intro: Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.
@@ -34,7 +35,7 @@ Claude Code is normally accessed through a credit card subscription. By using PP
 - A PayPerQ account and API key.
 - An operating system Claude Code supports; see Anthropic's [system requirements](https://code.claude.com/docs/en/setup#system-requirements).
 
-## Step by Step Set Up
+## Step by Step Set Up for Claude Code CLI
 
 ### 1. Install Claude Code
 
@@ -244,7 +245,7 @@ At launch, a warning such as `Model "google/gemini-3-flash-preview" isn't recogn
 
 The `/model` picker shows Anthropic's own prices for the built-in Claude entries. PayPerQ's prices are in the catalog.
 
-## Some other models with tool calling
+## Some good non-Anthropic Models
 
 These are example IDs that exist in the catalog and list `tools` in `supported_parameters`. The current full list is at [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models):
 
@@ -320,4 +321,6 @@ PayPerQ rejected the key. Claude Code retries before it gives up: an invalid key
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right or in our telegram channel: https://t.me/+ZjJDTazIrV0zNDFh
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-claude-code-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
