@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-strix-with-payperq",
+      "title": "Using Strix with PayPerQ",
+      "date": "2026-10-28",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-strix-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-strix-with-payperq/cover.jpg",
+      "intro": "Run Strix, the open-source AI pentesting tool, on pay-per-use PayPerQ models instead of a separate model subscription.",
+      "description": "",
+      "path": "guides/using-strix-with-payperq.md"
+    },
+    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -20,12 +34,13 @@
       "slug": "using-claude-desktop-with-payperq",
       "title": "Using Claude Desktop with PayPerQ",
       "date": "2026-04-23",
+      "updated": "2026-10-28",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
-      "ogImage": "/blog-images/using-claude-desktop-with-payperq/claude_desktop_cowork_og_1200x630_compressed.jpg",
+      "image": "/blog-images/using-claude-desktop-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-claude-desktop-with-payperq/cover.jpg",
       "intro": "Learn how to point Claude Desktop at PayPerQ using the built-in Third-Party Inference Gateway, so you can pay per use with crypto and avoid a Claude subscription.",
       "description": "",
       "path": "guides/using-claude-desktop-with-payperq.md"
@@ -34,12 +49,13 @@
       "slug": "using-hermes-with-payperq",
       "title": "Using Hermes Agent with PayPerQ",
       "date": "2026-04-20",
+      "updated": "2026-10-28",
       "author": "Rafael",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "image": "/blog-images/using-hermes-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-hermes-with-payperq/cover.jpg",
       "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
       "description": "",
       "path": "guides/using-hermes-with-payperq.md"
@@ -105,12 +121,13 @@
       "slug": "using-claude-code-with-payperq",
       "title": "Using Claude Code with PayPerQ",
       "date": "2026-01-13",
+      "updated": "2026-10-28",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
-      "ogImage": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
+      "image": "/blog-images/using-claude-code-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-claude-code-with-payperq/cover.jpg",
       "intro": "Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.",
       "description": "",
       "path": "guides/using-claude-code-with-payperq.md"
@@ -220,13 +237,14 @@
       "slug": "using-openwebui-with-payperq",
       "title": "Using OpenWebUI with PayPerQ",
       "date": "2025-04-02",
+      "updated": "2026-10-28",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
-      "ogImage": "/blog-images/using-openwebui-with-payperq/open_web_ui.png",
-      "intro": "",
+      "image": "/blog-images/using-openwebui-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openwebui-with-payperq/cover.jpg",
+      "intro": "Connect a self-hosted Open WebUI to PayPerQ with one connection, then pick a model and, optionally, set up image generation and editing.",
       "description": "",
       "path": "guides/using-openwebui-with-payperq.md"
     },

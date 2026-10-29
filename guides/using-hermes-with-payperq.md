@@ -2,8 +2,9 @@
 title: Using Hermes Agent with PayPerQ
 slug: using-hermes-with-payperq
 date: 2026-04-20
-image: /blog-images/using-hermes-with-payperq/hermes.webp
-ogImage: /blog-images/using-hermes-with-payperq/hermes.webp
+updated: 2026-10-28
+image: /blog-images/using-hermes-with-payperq/cover.jpg
+ogImage: /blog-images/using-hermes-with-payperq/cover.jpg
 intro: Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.
 author: Rafael
 tags:
@@ -19,10 +20,17 @@ Key features include:
 - **Persistent memory** — learns from past interactions and builds up knowledge over time
 - **Task scheduling** — automate reports, backups, and briefings using natural language
 - **Subagent delegation** — spin up isolated subagents for parallel task execution
-- **Flexible sandboxing** — supports local, Docker, SSH, Singularity, and Modal backends
+- **Flexible sandboxing** — run in local, Docker, SSH, or Modal terminal backends, among others
 - **Extended capabilities** — web search, browser automation, image generation, text-to-speech, and multi-model reasoning
 
-You can learn more at the [Hermes Agent website](https://hermes-agent.nousresearch.com/), browse the [GitHub repository](https://github.com/NousResearch/hermes-agent), or read the [documentation](https://docs.hermes-agent.nousresearch.com).
+You can learn more at the [Hermes Agent website](https://hermes-agent.nousresearch.com/), browse the [GitHub repository](https://github.com/NousResearch/hermes-agent), or read the [documentation](https://hermes-agent.nousresearch.com/docs/).
+
+## Prerequisites
+
+- A PayPerQ account with a funded balance and an API key (from [ppq.ai/api-docs](https://ppq.ai/api-docs)).
+- Linux, macOS on Apple Silicon (the Hermes docs: "macOS on x86 (Intel) processors is not a supported platform"), or Windows. The Hermes docs give one install command for Linux, macOS and WSL2 and another for native Windows (PowerShell).
+- Git, curl, tar and a SHA-256 utility on Linux and macOS: the Hermes docs say "For the POSIX source script, provide Git, curl, tar, and SHA-256 utilities."
+- A model with at least 64,000 tokens of context that supports tool calling: the Hermes docs say "Hermes Agent requires at least 64,000 tokens of context for agent use with tools."
 
 ## Step by Step Configuration
 
@@ -30,109 +38,160 @@ You can learn more at the [Hermes Agent website](https://hermes-agent.nousresear
 
 ### 1. Get Your PayPerQ API Key
 
-Navigate to [ppq.ai/api-docs](https://ppq.ai/api-docs) and copy your API key. It starts with `sk-`.
+Navigate to [ppq.ai/api-docs](https://ppq.ai/api-docs) and copy your API key from the "Your API Key" box. It starts with `sk-`. The same page shows the Base URL: `https://api.ppq.ai`. If you want a separate key for Hermes, use the "Manage your API keys" link on that page ([ppq.ai/api-keys](https://ppq.ai/api-keys)).
 
-### 2. Install the PPQ Plugin
+### 2. Install Hermes Agent
 
-Install the plugin before running the Hermes installer so that PayPerQ appears in the setup wizard:
-
-```bash
-# Download the plugin
-git clone https://github.com/PayPerQ/ppq-hermes-provider.git
-
-# Pre-install into the Hermes plugins directory
-mkdir -p ~/.hermes/plugins/model-providers/ppq
-cp -r ppq-hermes-provider/ppq_hermes_provider/. ~/.hermes/plugins/model-providers/ppq/
-cp ppq-hermes-provider/plugin.yaml ~/.hermes/plugins/model-providers/ppq/
-```
-
-### 3. Install Hermes Agent
-
-Now install Hermes. Because the plugin is already in place, **PayPerQ will appear in the provider list** during the setup wizard:
+On Linux, macOS or WSL2, run the Hermes installer:
 
 ```bash
 curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash
 ```
 
-When the wizard asks **"How would you like to set up Hermes?"**, select **Quick setup**.
+> **Windows:** the Hermes docs give this command for native Windows. Run it in PowerShell: `iex (irm https://hermes-agent.nousresearch.com/install.ps1)`
 
-### 4. Select PayPerQ as Your Provider
+The installer adds `~/.local/bin` to your shell profile's PATH. After it finishes, open a new terminal (the Hermes docs say `source ~/.bashrc`, or `source ~/.zshrc`) so the `hermes` command is found.
 
-Once the installation finishes, open the model picker:
+> **Shell profile:** on macOS the default shell is zsh and the profile is `~/.zshrc`; on most Linux distributions it is bash and `~/.bashrc`; on Windows, PowerShell loads the file named by `$PROFILE`. Open a new terminal after editing it.
+
+The installer then starts a setup wizard. Its first question is **"How would you like to set up Hermes?"**:
+
+![Hermes installer: How would you like to set up Hermes?](/blog-images/using-hermes-with-payperq/01-installer-setup-menu.png)
+
+Choose **Full setup — configure every provider, tool & option yourself (bring your own keys)**. The first option, **Quick Setup (Nous Portal)**, is a free OAuth login with no API keys, so it is not the PayPerQ route.
+
+Full setup then asks about the provider, the terminal backend, messaging platforms, tools and several tool providers. Answer them as you prefer; PayPerQ is configured in the next step. When it asks you to **Select provider**, you can pick **Leave unchanged**, and you can skip the optional tool providers.
+
+If the installer stops with a message about `libatomic.so.1` on a minimal Debian or Ubuntu system, install the package it names and run the installer again: `sudo apt-get install -y libatomic1`. The Hermes docs say the installer does this itself when it runs as root or with `sudo -n`.
+
+### 3. Add PayPerQ as a Custom Endpoint
+
+Hermes works with any OpenAI-compatible endpoint. The Hermes docs list this as the way to use a third-party API: `hermes model`, then "Custom endpoint". Open a new terminal and run:
 
 ```bash
 hermes model
 ```
 
-Scroll down to **PayPerQ**, select it, and enter your API key when prompted. Hermes will fetch the live model catalog and ask you to pick a model. Choose one and you're ready to go.
+Scroll down to **Custom endpoint (enter URL manually)** (near the bottom of the provider list), select it, and answer the prompts:
 
-That's it! Hermes is now configured to use PayPerQ as its AI provider.
+| Prompt | What to enter |
+| --- | --- |
+| `API base URL` | `https://api.ppq.ai/v1` |
+| `API key [optional]` | `<your PayPerQ API key>` (the field is masked) |
+| `Select API compatibility mode` | press Enter (Auto-detect) |
+| `Select model [1-378] or type name` | `mistralai/mistral-nemo` |
+| `Context length in tokens` | press Enter (auto-detect) |
+| `Display name` | `PayPerQ` |
+| `Select reasoning effort` | `Skip (keep current)` |
+
+![hermes model: custom endpoint prompts](/blog-images/using-hermes-with-payperq/09-custom-endpoint-prompts.png)
+
+After you enter the key, Hermes checks the endpoint and prints `Verified endpoint via https://api.ppq.ai/v1/models` with the number of models it found. It then lists the whole live PayPerQ catalog, numbered. You can type a number or a model ID.
+
+> **Note:** `mistralai/mistral-nemo` costs $0.030595 per 1M input tokens and $0.03165 per 1M output tokens at the time of writing, with a 131,072-token context and `tools` in its `supported_parameters`. See [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models) for current prices.
+
+When it finishes you see this:
+
+![hermes model: endpoint saved](/blog-images/using-hermes-with-payperq/10-custom-endpoint-saved.png)
+
+Hermes saves the key in its own `.env` file (the line `API key saved to .env as HERMES_CUSTOM_API_PPQ_AI_API_KEY`) and the provider and model in `config.yaml`, both in the Hermes data folder (`~/.hermes/`).
+
+> **Windows:** per the Hermes docs, "Native Windows install lives under `%LOCALAPPDATA%\hermes`", so on native Windows these files are in that folder.
+
+> **Note:** if you also pass a key another way, the Hermes docs say: "an explicit --api-key flag still wins; otherwise key_cmd beats a static api_key/key_env on the same entry." The wizard stores the key under `key_env`. If PayPerQ answers 401, check that no other key source is set on that entry.
 
 ## Already Have Hermes Installed?
 
-If Hermes is already running on your machine, you don't need to reinstall it. Just follow these three steps:
+If Hermes is already on your machine you don't need to reinstall it. Run `hermes model`, choose **Custom endpoint (enter URL manually)**, and enter `https://api.ppq.ai/v1`, your PayPerQ API key and a model ID, as in [step 3](#3-add-payperq-as-a-custom-endpoint) above.
 
-**1. Install the PPQ plugin:**
+## Check That Hermes Uses PayPerQ
 
-```bash
-git clone https://github.com/PayPerQ/ppq-hermes-provider.git
-mkdir -p ~/.hermes/plugins/model-providers/ppq
-cp -r ppq-hermes-provider/ppq_hermes_provider/. ~/.hermes/plugins/model-providers/ppq/
-cp ppq-hermes-provider/plugin.yaml ~/.hermes/plugins/model-providers/ppq/
-```
-
-**2. Switch to PayPerQ:**
+Before you send a prompt, check which provider and model Hermes will use:
 
 ```bash
-hermes model
+hermes status
 ```
 
-Scroll down to **PayPerQ**, select it, and enter your API key when prompted. Hermes saves it automatically. That's all — no restart needed.
+You should see these lines:
+
+```
+  Model:        mistralai/mistral-nemo
+  Provider:     custom
+  Providers:    PayPerQ
+```
+
+![hermes status](/blog-images/using-hermes-with-payperq/11-custom-status.png)
+
+Then start Hermes and type `/model`. The picker shows `Current: mistralai/mistral-nemo on Custom endpoint` and `PayPerQ (378 models)  ← current` (the model count changes as the catalog grows). Press Escape to close it.
+
+```bash
+hermes
+```
+
+![Hermes /model picker](/blog-images/using-hermes-with-payperq/12-custom-model-picker.png)
+
+## Send a Test Prompt
+
+In the Hermes chat, type:
+
+```
+Reply with the word OK
+```
+
+Hermes answers `OK`:
+
+![Hermes answers OK through PayPerQ](/blog-images/using-hermes-with-payperq/13-custom-test-prompt-ok.png)
+
+Each Hermes request carries its system prompt and tool list; the status bar in the screenshot shows about 14.8K tokens of context in use after this one-line prompt.
 
 ## Some Good Models to Try
 
-PayPerQ gives you access to hundreds of models. Here are some great ones to try with Hermes:
+These are examples, not a complete or Hermes-specific list. PayPerQ gives you access to hundreds of models; the full catalog is at [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models). Hermes picks a model by its catalog `id`, and the catalog's JSON format is different from Hermes's own `config.yaml` format: the `id` field is what you type in `hermes model`, `context_length` is the context window Hermes needs to be at least 64,000, and `supported_parameters` must contain `tools`.
 
-- **moonshotai/kimi-k2.6** - Moonshot AI's advanced multimodal coding model
-- **mistralai/devstral-2512** - Mistral AI's development model
-- **kwaipilot/kat-coder-pro** - Kwaipilot's professional coding model
-- **google/gemini-3-flash-preview** - Google's latest multimodal AI
-- **z-ai/glm-4.7** - Z-AI's powerful model
-- **minimax/minimax-m2.1** - MiniMax's advanced model
-- **x-ai/grok-code-fast-1** - X.AI's rapid coding model
-- **And many more premium models**
+Each of these IDs is in the catalog today with `tools` in `supported_parameters` and a context of at least 64,000 tokens:
 
-## Get the Most Recent Models
+- `mistralai/mistral-nemo` — the economical model used in this guide
+- `moonshotai/kimi-k2.6`
+- `mistralai/devstral-2512`
+- `google/gemini-3-flash-preview`
+- `z-ai/glm-4.7`
+- `minimax/minimax-m2.1`
 
-Want to see all available models? You can fetch the most up-to-date list directly from PayPerQ's API:
+To switch model for the current Hermes session, type `/model custom:<model id>`, for example `/model custom:moonshotai/kimi-k2.6`. Hermes then prints `(session only — add --global to persist)`. To change the default, run `hermes model` again.
+
+To see the live list, run:
 
 ```bash
 curl https://api.ppq.ai/v1/models
 ```
 
-This endpoint returns a JSON list of all currently available models on PayPerQ.
-
 ## Verify Your Setup
 
-Once Hermes is running with your PayPerQ configuration, you can verify requests are being processed by checking your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
+You can also confirm that requests are being processed by checking your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
 
 ## Try AutoClaw — Smart Model Routing
 
-Don't want to pick a model yourself? [AutoClaw](/blog/using-autoclaw-with-payperq) is our intelligent router that automatically selects the best model for each prompt — saving you money on simple questions while using top-tier models when it matters. Since AutoClaw works on the PayPerQ API side, it's fully compatible with Hermes — just use `autoclaw` as your model name.
+Don't want to pick a model yourself? [AutoClaw](/blog/using-autoclaw-with-payperq) is our intelligent router that selects a model for each prompt. In Hermes, type `/model custom:autoclaw` and Hermes shows `Model switched: autoclaw`.
 
 ## Private Models
 
-Want maximum privacy? PayPerQ offers [TEE (Trusted Execution Environment) models](/blog/using-private-tee-models-with-openclaw) that encrypt your queries so neither PayPerQ nor anyone else can read them. Available private models include:
+Want maximum privacy? PayPerQ offers [TEE (Trusted Execution Environment) models](/blog/using-private-tee-models-with-openclaw) that encrypt your queries so neither PayPerQ nor anyone else can read them. Private models in the catalog include:
 
-- **private/kimi-k3** - Recommended for agentic tasks
-- **private/gpt-oss-120b** - Budget-friendly general use
-- **private/llama3-3-70b** - Fast
-- **private/glm-5-3** - Agentic engineering, long-horizon tool use, 1M context
-- **private/glm-5-3-flash** - Fast, low-cost vision + reasoning, 1M context
-- **private/gemma4-31b** - Vision-language with built-in thinking mode
-- **private/deepseek-v4-1-flash** - Multimodal refresh with vision input, 1M context
+- **private/kimi-k3**
+- **private/gpt-oss-120b**
+- **private/llama3-3-70b**
+- **private/glm-5-3**
+- **private/gemma4-31b**
+- **private/deepseek-v4-1-flash**
 
-To use private models with Hermes, you'll need the [PPQ Private Mode Proxy](https://github.com/PayPerQ/ppq-private-mode-proxy). See the [full guide](/blog/using-private-tee-models-with-openclaw) for setup instructions.
+To use private models you need the [PPQ Private Mode Proxy](https://github.com/PayPerQ/ppq-private-mode-proxy). See the [full guide](/blog/using-private-tee-models-with-openclaw) for setup instructions. Check each model's `supported_parameters` in the [catalog](https://api.ppq.ai/v1/models) for `tools` before using it with Hermes.
+
+## Troubleshooting
+
+- **The setup wizard logged me in to Nous Portal instead of asking for a key.** You chose **Quick Setup**. Run `hermes model` and follow step 3.
+- **401 Invalid API key.** Copy the key again from [ppq.ai/api-docs](https://ppq.ai/api-docs) and run `hermes model` again. Also check for a second key source on the same entry (see the Note in step 3).
+- **`hermes: command not found`.** Open a new terminal so the PATH change in your shell profile is loaded.
+- **The model ID is not accepted.** IDs come from [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models); type the `id` exactly.
 
 ## What is PayPerQ?
 
@@ -161,4 +220,6 @@ No account, no sign-up. Fund and go.
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right or in our telegram channel!
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-hermes-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
