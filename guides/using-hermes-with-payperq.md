@@ -3,8 +3,8 @@ title: Using Hermes Agent with PayPerQ
 slug: using-hermes-with-payperq
 date: 2026-04-20
 updated: 2026-10-28
-image: /blog-images/using-hermes-with-payperq/hermes.webp
-ogImage: /blog-images/using-hermes-with-payperq/hermes.webp
+image: /blog-images/using-hermes-with-payperq/cover.jpg
+ogImage: /blog-images/using-hermes-with-payperq/cover.jpg
 intro: Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.
 author: Rafael
 tags:

@@ -39,8 +39,8 @@
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-hermes-with-payperq/hermes.webp",
-      "ogImage": "/blog-images/using-hermes-with-payperq/hermes.webp",
+      "image": "/blog-images/using-hermes-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-hermes-with-payperq/cover.jpg",
       "intro": "Learn how to configure Hermes Agent by Nous Research to use PayPerQ's API for pay-per-use access to hundreds of AI models across Telegram, Discord, Slack, and more.",
       "description": "",
       "path": "guides/using-hermes-with-payperq.md"
