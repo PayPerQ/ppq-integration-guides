@@ -5,13 +5,17 @@
 // No dependencies on purpose: contributors only need Node 18+.
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+// fileURLToPath, not URL.pathname: a checkout under a folder with a space in its name
+// would otherwise resolve to ".../coding%20projects/..." and fail to find guides/.
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const guidesDir = path.join(root, 'guides');
 const write = process.argv.includes('--write');
 
 const REQUIRED = ['title', 'slug', 'date', 'author', 'tags'];
-const OPTIONAL = ['image', 'ogImage', 'intro', 'description'];
+// `updated` is the date of the last content revision; `date` stays the publication date.
+const OPTIONAL = ['updated', 'image', 'ogImage', 'intro', 'description'];
 const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 const IMAGE = /^\/blog-images\/[a-z0-9-]+\/[^/]+$/;
@@ -81,6 +85,8 @@ for (const file of files) {
   if (data.slug !== file.replace(/\.md$/, '')) err(`slug "${data.slug}" must match the file name`);
   if (data.slug && !SLUG.test(data.slug)) err('slug must be lowercase letters, digits and dashes');
   if (data.date && !DATE.test(data.date)) err('date must be YYYY-MM-DD');
+  if (data.updated && !DATE.test(data.updated)) err('updated must be YYYY-MM-DD');
+  if (data.updated && data.date && data.updated < data.date) err('updated must not be before date');
   if (data.tags && !Array.isArray(data.tags)) err('tags must be a list');
 
   const images = [data.image, data.ogImage].filter(Boolean);
@@ -99,6 +105,8 @@ for (const file of files) {
     slug: data.slug,
     title: data.title,
     date: data.date,
+    // Only present when set, so a guide that was never revised keeps the same index entry.
+    ...(data.updated ? { updated: data.updated } : {}),
     author: data.author,
     tags: Array.isArray(data.tags) ? data.tags : [],
     image: data.image || '',

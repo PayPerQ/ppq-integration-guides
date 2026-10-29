@@ -105,26 +105,26 @@ If you also use Claude Code (the CLI / VS Code companion to Claude Desktop), the
 
 ![PayPerQ](/ppqai-opengraph-banner.png)
 
-PayPerQ is a pay-per-query AI service that gives you instant access to hundreds of chat, image, video, and audio AI models in one place. Unlike traditional ChatGPT subscription that charges $20+ per month, PPQ users pay only for what they use—averaging just $4 a month.
+PayPerQ is the private way to use AI. You get the big-name models from Anthropic, OpenAI, Google and xAI, the best open-source models, and TEE models that run inside a hardware enclave where not even the model's host can see your data. Chat, image, video and audio, all in one place, with no account and no subscription. You top up a balance with crypto or a card, from as little as 10 cents, and pay only for what you use. Most users spend about $4 a month, against $20+ for a single ChatGPT subscription.
 
-Account registration optional. No monthly commitments. Privacy focused. Credit cards and all major cryptos accepted. Just top up with as little as 10 cents and start using premium AI immediately.
+Privacy is built in rather than bolted on. Every chat request is served inside a secure enclave that PayPerQ's servers, staff and logs cannot read into, so PayPerQ never sees your prompts or responses. Choose a TEE model and the model's host cannot read them either.
 
 ### Why Use PayPerQ?
 
-- **Access hundreds of AI models** from all major providers in one place
-- **Pay per use** - no subscriptions, no wasted money on unused credits
-- **No registration required** - start using AI in seconds
-- **Start small** - top up with as little as 10 cents
-- **Privacy-first** - conversational data stored locally by default
-- **Average cost: ~1 cent per query**
+- **Private by default** - chats are served inside a secure enclave PayPerQ cannot read, and every chat model shows its privacy tier (Anon, ZDR or TEE)
+- **No account needed** - no sign-up and no email; a credit id is all it takes
+- **Pay with crypto or card** - Bitcoin, Lightning, Monero, stablecoins and more, or a credit card
+- **Hundreds of AI models** from every major provider in one place
+- **Pay per use** - no subscriptions; top up from 10 cents and pay only for what you use, about 1 cent per query on average
+- **Your history stays yours** - conversations are stored on your device by default
 
 ## Getting Started
 
 1. Visit [ppq.ai](https://ppq.ai)
-2. Top up your balance (crypto or credit card, as little as 10 cents)
-3. Select your model and start chatting
+2. Top up your balance with crypto or a card (as little as 10 cents)
+3. Pick a model, check its privacy tier, and start chatting
 
-No account creation needed—just fund and go.
+No account, no sign-up. Fund and go.
 
 ## Problems?
 
