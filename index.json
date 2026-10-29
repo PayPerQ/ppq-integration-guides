@@ -2,20 +2,6 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-claude-code-with-payperq",
-      "title": "Using Claude Code with PayPerQ",
-      "date": "2026-10-28",
-      "author": "Matt Ahlborg",
-      "tags": [
-        "Third Party Integrations"
-      ],
-      "image": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
-      "ogImage": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
-      "intro": "Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.",
-      "description": "",
-      "path": "guides/using-claude-code-with-payperq.md"
-    },
-    {
       "slug": "using-codex-with-payperq",
       "title": "Using OpenAI Codex with PayPerQ",
       "date": "2026-07-10",
@@ -114,6 +100,21 @@
       "intro": "Learn how to configure OpenClaw (Clawdbot) to use PayPerQ's API for pay-per-use access to Claude and hundreds of other AI models.",
       "description": "",
       "path": "guides/using-openclaw-with-payperq.md"
+    },
+    {
+      "slug": "using-claude-code-with-payperq",
+      "title": "Using Claude Code with PayPerQ",
+      "date": "2026-01-13",
+      "updated": "2026-10-28",
+      "author": "Matt Ahlborg",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
+      "ogImage": "/blog-images/using-claude-code-with-payperq/claude_code.webp",
+      "intro": "Learn how to integrate Claude Code, Anthropic's official AI coding CLI, with PayPerQ to access premium AI models.",
+      "description": "",
+      "path": "guides/using-claude-code-with-payperq.md"
     },
     {
       "slug": "using-cursor-with-payperq",
