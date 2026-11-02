@@ -2,18 +2,18 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-deeptutor-with-payperq",
-      "title": "Using DeepTutor with PayPerQ",
+      "slug": "using-astrbot-with-payperq",
+      "title": "Using AstrBot with PayPerQ",
       "date": "2026-11-02",
       "author": "PayPerQ",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-deeptutor-with-payperq/cover.jpg",
-      "ogImage": "/blog-images/using-deeptutor-with-payperq/cover.jpg",
-      "intro": "Run the DeepTutor AI tutor on pay-per-use PayPerQ models instead of a subscription, configured through DeepTutor's own setup wizard.",
+      "image": "/blog-images/using-astrbot-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-astrbot-with-payperq/cover.jpg",
+      "intro": "Run your own AstrBot chatbot on pay-per-use PayPerQ models instead of a subscription: add PayPerQ as an OpenAI-compatible provider in the AstrBot WebUI and chat with it.",
       "description": "",
-      "path": "guides/using-deeptutor-with-payperq.md"
+      "path": "guides/using-astrbot-with-payperq.md"
     },
     {
       "slug": "using-strix-with-payperq",
