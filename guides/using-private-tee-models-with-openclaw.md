@@ -2,8 +2,9 @@
 title: How to use PPQ's Private (TEE) AI models via our API and with OpenClaw
 slug: using-private-tee-models-with-openclaw
 date: 2026-03-06
-image: /blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp
-ogImage: /blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp
+updated: 2026-11-02
+image: /blog-images/using-private-tee-models-with-openclaw/cover.jpg
+ogImage: /blog-images/using-private-tee-models-with-openclaw/cover.jpg
 intro: You can now use PPQ.AI's private encrypted models via API or in OpenClaw.
 author: Matt Ahlborg
 tags:
@@ -13,45 +14,81 @@ tags:
 
 ## What are "TEE" AI models?
 
-TEE (Trusted Execution Environment) AI models allow users to run AI queries in the cloud and on remote servers without those servers having access to the content of the users' queries. This delivers one of the best AI capability to privacy tradeoffs in the industry currently.
+TEE (Trusted Execution Environment) AI models run inside a hardware enclave: the server that runs the model cannot read the content of your queries. PPQ lists the `private/*` models with the privacy tier shown as `e2e` in the [model catalog](https://api.ppq.ai/v1/models); per the proxy's README, these are open-weight models such as Kimi and GLM served from inside a Tinfoil enclave, where the model itself runs.
 
 ## How to leverage these models using PPQ?
 
-The trick in using private models is that you need to encrypt the content of your request before sending them onto PPQ and its AI provider. With our proxy repo below, you encrypt the queries on your machine before they leave -- neither PPQ.AI nor anyone else can read them. To get started, head over to the plugin's GitHub page for full installation and configuration instructions:
+According to the [project's README](https://github.com/PayPerQ/ppq-private-mode-proxy), every PPQ chat request is now served inside an AWS Nitro enclave, with or without the proxy. The proxy is an optional add-on that lets *you* verify that: when it starts it checks the enclave's attestation and refuses to send anything if it does not match, then encrypts each request to the verified enclave on your machine and decrypts the response locally.
+
+**Prerequisites:** a PayPerQ API key (from [ppq.ai/api-docs](https://ppq.ai/api-docs)) and Node.js 20 or newer.
 
 ## [→ github.com/PayPerQ/ppq-private-mode-proxy](https://github.com/PayPerQ/ppq-private-mode-proxy)
 
-The proxy in the repo supports both standalone use cases with your own custom code as well as usage inside of openclaw.
+## Step by Step Set Up
+
+Start the proxy in a terminal and leave it running. The key is read from the `PPQ_API_KEY` variable of the shell that starts it:
+
+```bash
+export PPQ_API_KEY="<your PayPerQ API key>"
+npx ppq-private-mode
+```
+
+> **Windows:** in PowerShell, `$env:PPQ_API_KEY = "<your PayPerQ API key>"` sets the variable for the current window only. To keep it for new windows, run `setx PPQ_API_KEY "<your PayPerQ API key>"` and open a new terminal.
+
+A successful start looks like this:
+
+![The proxy starts, verifies the enclave and listens on port 8787](/blog-images/using-private-tee-models-with-openclaw/01-proxy-start.png)
+
+The proxy listens on `http://127.0.0.1:8787` and lists its models at `/v1/models`. Check that `private/gpt-oss-120b` is in the list, then send a short test request (any OpenAI- or Anthropic-compatible client can use the same address):
+
+```bash
+curl -s http://127.0.0.1:8787/v1/models
+curl -s http://127.0.0.1:8787/v1/chat/completions -H "Content-Type: application/json" \
+  -d '{"model":"private/gpt-oss-120b","messages":[{"role":"user","content":"Reply with the word OK"}],"max_tokens":200}'
+```
+
+> **Note:** `private/gpt-oss-120b` costs $0.158 per 1M input tokens and $0.633 per 1M output tokens at the time of writing. See [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models) for current prices.
+
+The reply's `content` is `OK`:
+
+![A chat completion through the proxy answered OK](/blog-images/using-private-tee-models-with-openclaw/02-test-prompt.png)
+
+The proxy also ships an OpenClaw plugin. The repository's own OpenClaw skill installs it with `openclaw plugins install ppq-private-mode` and adds a provider entry pointing at `http://127.0.0.1:8787/v1` to `~/.openclaw/openclaw.json`; follow the proxy's README for the current steps.
+
+> **Windows:** `~` is your user folder, so this file is `%USERPROFILE%\.openclaw\openclaw.json`.
 
 ## Using private models with Claude Code
 
-The proxy also exposes a native Anthropic endpoint (`/v1/messages`), so you can use private models directly inside **Claude Code** — including tool use and streaming. Start the proxy, then point Claude Code at it:
+The proxy also exposes a native Anthropic endpoint (`/v1/messages`), so you can point **Claude Code** at it. With the proxy running, set these in the shell that starts Claude Code, then launch it (the variables are the ones the proxy prints at startup):
 
 ```bash
-# 1. Start the proxy (leave running)
-PPQ_API_KEY=sk-your-key npx ppq-private-mode
-
-# 2. Point Claude Code at the proxy and launch it
 export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
-export ANTHROPIC_AUTH_TOKEN="sk-your-key"
+export ANTHROPIC_AUTH_TOKEN="<your PayPerQ API key>"
 export ANTHROPIC_MODEL="private/glm-5-3"
-export ANTHROPIC_SMALL_FAST_MODEL="private/glm-5-3-flash"
+export ANTHROPIC_SMALL_FAST_MODEL="private/deepseek-v4-1-flash"
 claude
 ```
+
+> **Windows:** in PowerShell, `$env:ANTHROPIC_BASE_URL = "http://127.0.0.1:8787"` sets the variable for the current window only. To keep it for new windows, run `setx ANTHROPIC_BASE_URL "http://127.0.0.1:8787"` and open a new terminal. Do the same for ANTHROPIC_AUTH_TOKEN = `"<your PayPerQ API key>"`, ANTHROPIC_MODEL = "private/glm-5-3" and ANTHROPIC_SMALL_FAST_MODEL = "private/deepseek-v4-1-flash".
 
 See our [full Claude Code guide](https://ppq.ai/blog/using-claude-code-with-payperq) for VS Code extension setup and more.
 
 ## Available Private Models
 
+This is the list the proxy returned from `/v1/models` at the time of writing; the full PPQ catalog is at [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models) (its entries have a different format from the proxy's list: `id` is the model name, `pricing` holds the per-1M-token prices).
+
 | Model | Best For |
 |-------|----------|
-| `private/kimi-k3` | **Recommended.** Moonshot flagship multimodal MoE, reasoning, strong coding, best in openclaw and for agentic tasks |
+| `private/kimi-k3` | Moonshot multimodal MoE model |
 | `private/gpt-oss-120b` | Budget-friendly general use |
 | `private/llama3-3-70b` | Fast |
 | `private/glm-5-3` | Agentic engineering, long-horizon tool use, 1M context |
-| `private/glm-5-3-flash` | Fast, low-cost vision + reasoning, 1M context |
 | `private/gemma4-31b` | Vision-language with built-in thinking mode |
 | `private/deepseek-v4-1-flash` | Multimodal refresh with vision input, 1M context |
+
+### Troubleshooting
+
+- **`EBADENGINE` warnings when running `npx ppq-private-mode`:** some of the proxy's dependencies (the `@ai-sdk/*` packages) ask for Node 22 or newer. On Node 20 the warnings are printed and the proxy still starts; upgrading Node removes them.
 
 ## What is PayPerQ?
 
@@ -78,6 +115,8 @@ Privacy is built in rather than bolted on. Every chat request is served inside a
 
 No account, no sign-up. Fund and go.
 
-## Questions?
+## Problems?
 
-Contact support via the PPQ.AI chatbot at [ppq.ai](https://ppq.ai) or join the Telegram channel for help.
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-private-tee-models-with-openclaw.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.

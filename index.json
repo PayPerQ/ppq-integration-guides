@@ -78,13 +78,14 @@
       "slug": "using-private-tee-models-with-openclaw",
       "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
       "date": "2026-03-06",
+      "updated": "2026-11-02",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations",
         "Privacy"
       ],
-      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "image": "/blog-images/using-private-tee-models-with-openclaw/cover.jpg",
+      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/cover.jpg",
       "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
       "description": "",
       "path": "guides/using-private-tee-models-with-openclaw.md"
