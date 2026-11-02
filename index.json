@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-tradingagents-with-payperq",
+      "title": "Using TradingAgents with PayPerQ",
+      "date": "2026-11-02",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-tradingagents-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-tradingagents-with-payperq/cover.jpg",
+      "intro": "Run the TradingAgents multi-agent trading research framework on pay-per-use PayPerQ models instead of a single provider subscription.",
+      "description": "",
+      "path": "guides/using-tradingagents-with-payperq.md"
+    },
+    {
       "slug": "using-strix-with-payperq",
       "title": "Using Strix with PayPerQ",
       "date": "2026-10-28",
