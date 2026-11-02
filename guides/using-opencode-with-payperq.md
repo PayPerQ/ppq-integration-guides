@@ -2,8 +2,9 @@
 title: Using OpenCode AI Coding Agent with PayPerQ
 slug: using-opencode-with-payperq
 date: 2026-03-13
-image: /blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg
-ogImage: /blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg
+updated: 2026-11-02
+image: /blog-images/using-opencode-with-payperq/cover.jpg
+ogImage: /blog-images/using-opencode-with-payperq/cover.jpg
 intro: Learn how to integrate OpenCode, the open source AI coding agent, with PayPerQ to access premium AI models including Claude Sonnet 4.6, GPT-5.4, and Gemini 3.
 author: Thomas Weiss
 tags:
@@ -16,34 +17,34 @@ OpenCode is an open source AI coding agent that helps you write code directly in
 
 ## Why Use PayPerQ with OpenCode?
 
-By connecting OpenCode to PayPerQ's API, you gain access to cutting-edge AI models that are perfect for coding tasks:
+By connecting OpenCode to PayPerQ's API, you can pick from the models in the PayPerQ catalog (Anthropic, OpenAI, Google, Moonshot and many more) with simple pay-per-use pricing, no subscription required. The full, current list is at [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models).
 
-- **Claude Sonnet 4.6 & Opus 4.6** - Anthropic's most advanced reasoning models
-- **GPT-5.4** - OpenAI's latest models including GPT-5.4 Pro
-- **Gemini 3 Pro & Flash** - Google's latest multimodal AI
-- **Kimi K2.6** - Moonshot's latest multimodal coding model
-- **Big Pickle** - OpenCode's free model (limited time)
-- **And many more premium models**
+Prerequisites:
 
-Many OpenCode Zen-recommended models are available through PayPerQ with simple pay-per-use pricing—no subscriptions required.
+- A PayPerQ account and API key.
+- On Windows, the OpenCode docs recommend WSL (see the callout in step 1).
 
 ## Step by Step Set Up
 
 ### 1. Install OpenCode
 
-First, install OpenCode using one of the following methods:
+Install OpenCode with the official script:
 
-**Using curl:**
 ```bash
 curl -fsSL https://opencode.ai/install | bash
 ```
 
-**Using npm:**
+The installer adds `~/.opencode/bin` to your PATH. Open a new terminal afterwards so the `opencode` command is found.
+
+> **Shell profile:** on macOS the default shell is zsh and the profile is `~/.zshrc`; on most Linux distributions it is bash and `~/.bashrc`; on Windows, PowerShell loads the file named by `$PROFILE`. Open a new terminal after editing it.
+
+> **Windows:** the OpenCode docs say: "For the best experience on Windows, we recommend using Windows Subsystem for Linux (WSL)." See [opencode.ai/docs/windows-wsl](https://opencode.ai/docs/windows-wsl/).
+
+**Alternatives** (from the [OpenCode docs](https://opencode.ai/docs/)):
+
 ```bash
 npm install -g opencode-ai
 ```
-
-**Using brew (macOS):**
 
 ```bash
 brew install anomalyco/tap/opencode
@@ -53,29 +54,23 @@ For more installation options, visit the [OpenCode GitHub repository](https://gi
 
 ### 2. Get Your PayPerQ API Key
 
-Navigate to [ppq.ai/api-docs](https://ppq.ai/api-docs) and copy your API key. You'll need this to authenticate your requests.
+Navigate to [ppq.ai/api-docs](https://ppq.ai/api-docs) and copy your API key. You can create more keys at [ppq.ai/api-keys](https://ppq.ai/api-keys). You will paste it into OpenCode in step 5.
 
 ![OpenCode Welcome](/blog-images/using-opencode-with-payperq/opencode-welcome-banner.png)
 
 ### 3. Locate Your OpenCode Config Folder
 
-OpenCode stores its configuration in a platform-specific location:
+OpenCode's global config file is `~/.config/opencode/opencode.json` ([OpenCode config docs](https://opencode.ai/docs/config/)). Create the folder if it does not exist:
 
-- **macOS/Linux:** `~/.config/opencode/` (`opencode.jsonc` or `opencode.json`)
-- **macOS/Linux (older installs):** `~/.local/share/opencode/` (`opencode.jsonc`)
-- **Windows:** Press `WIN+R` and paste `%USERPROFILE%\.config\opencode\`
+```bash
+mkdir -p ~/.config/opencode
+```
 
-> **Note:** If the config folder doesn't exist yet, run OpenCode once or create the directory manually.
-
-Navigate to this folder in your terminal or file explorer.
+> **Windows:** `~` is your user folder, so this file is `%USERPROFILE%\.config\opencode\opencode.json`.
 
 ### 4. Create the Configuration File
 
-Create a new file called `opencode.json` in your OpenCode config folder. You can download the complete configuration file here:
-
-**[Download opencode.json](/blog-images/using-opencode-with-payperq/opencode.json)**
-
-Or create it manually with the following content:
+Create `~/.config/opencode/opencode.json` with this content. It declares the PayPerQ provider and one example model. It does not contain your API key: you add that with `/connect` in step 5.
 
 ```json
 {
@@ -83,95 +78,13 @@ Or create it manually with the following content:
   "provider": {
     "ppq": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "ppq",
+      "name": "PayPerQ",
       "options": {
-        "baseURL": "https://api.ppq.ai",
-        "apiKey": "sk-YOUR_API_KEY_HERE",
-        "includeUsage": true
+        "baseURL": "https://api.ppq.ai/v1"
       },
       "models": {
-        "x-ai/grok-code-fast-1": {
-          "name": "x-ai/grok-code-fast-1"
-        },
-        "anthropic/claude-sonnet-4": {
-          "name": "anthropic/claude-sonnet-4"
-        },
-        "anthropic/claude-sonnet-4.5": {
-          "name": "anthropic/claude-sonnet-4.5"
-        },
-        "claude-sonnet-4.6": {
-          "name": "claude-sonnet-4.6"
-        },
-        "claude-haiku-4.5": {
-          "name": "claude-haiku-4.5"
-        },
-        "anthropic/claude-3.5-haiku": {
-          "name": "anthropic/claude-3.5-haiku"
-        },
-        "claude-opus-4.5": {
-          "name": "claude-opus-4.5"
-        },
-        "claude-opus-4.6": {
-          "name": "claude-opus-4.6"
-        },
-        "anthropic/claude-opus-4.1": {
-          "name": "anthropic/claude-opus-4.1"
-        },
-
-        "gemini-3-flash-preview": {
-          "name": "gemini-3-flash-preview"
-        },
-        "gemini-3-pro-preview": {
-          "name": "gemini-3-pro-preview"
-        },
-        "google/gemini-3.1-pro-preview": {
-          "name": "google/gemini-3.1-pro-preview"
-        },
-
-        "minimax/minimax-m2.5": {
-          "name": "minimax/minimax-m2.5"
-        },
-
-        "z-ai/glm-5": {
-          "name": "z-ai/glm-5"
-        },
-
-        "moonshotai/kimi-k2.6": {
-          "name": "moonshotai/kimi-k2.6"
-        },
-
-        "gpt-5.1": {
-          "name": "gpt-5.1"
-        },
-        "gpt-5.1-codex": {
-          "name": "gpt-5.1-codex"
-        },
-        "openai/gpt-5.1-codex-max": {
-          "name": "openai/gpt-5.1-codex-max"
-        },
-        "openai/gpt-5.1-codex-mini": {
-          "name": "openai/gpt-5.1-codex-mini"
-        },
-        "openai/gpt-5": {
-          "name": "openai/gpt-5"
-        },
-        "openai/gpt-5-codex": {
-          "name": "openai/gpt-5-codex"
-        },
-        "gpt-5-nano": {
-          "name": "gpt-5-nano"
-        },
-        "gpt-5.2": {
-          "name": "gpt-5.2"
-        },
-        "gpt-5.2-codex": {
-          "name": "gpt-5.2-codex"
-        },
-        "openai/gpt-5.3-codex": {
-          "name": "openai/gpt-5.3-codex"
-        },
-        "openai/gpt-5.4": {
-          "name": "openai/gpt-5.4"
+        "openai/gpt-5-nano": {
+          "name": "GPT-5 Nano"
         }
       }
     }
@@ -179,62 +92,84 @@ Or create it manually with the following content:
 }
 ```
 
-**Important:** Replace `sk-YOUR_API_KEY_HERE` with your actual PayPerQ API key from [ppq.ai/api-docs](https://ppq.ai/api-docs).
+> **Note:** `openai/gpt-5-nano` is an economical example model; its price is $0.05275 per 1M input tokens and $0.422 per 1M output tokens at the time of writing. See [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models) for current prices.
+
+The model list above is an example. The full catalog is at [api.ppq.ai/v1/models](https://api.ppq.ai/v1/models), and its format is different from OpenCode's: in OpenCode's `models` section the key is the catalog entry's `id`, and `name` is any display name you want. Per the OpenCode docs, "Each ID must match the id returned by GET /v1/models".
 
 ### 5. Launch OpenCode and Select Your Model
 
-Start OpenCode in your terminal or desktop app. To view all available PayPerQ models, use the `/models` command:
+Start OpenCode:
 
 ```bash
+opencode
+```
+
+Then store your key. In the OpenCode prompt, type `/connect`, scroll to **Other**, enter the provider id `ppq` (the id used in this guide's `opencode.json`), and paste your key when asked for **API key**:
+
+```
+/connect
+```
+
+![OpenCode /connect provider id prompt](/blog-images/using-opencode-with-payperq/03-connect-provider-id.png)
+
+Per the OpenCode docs, `/connect` stores credentials in `~/.local/share/opencode/auth.json`.
+
+> **Note:** the docs describe `options.apiKey` in the config as "Optionally set the API key, if not using auth". Use one method consistently: this guide uses `/connect`.
+
+After the key is saved, OpenCode shows the PayPerQ model picker. You can open it again any time with `/models`:
+
+```
 /models
 ```
 
-![OpenCode Models Command](/blog-images/using-opencode-with-payperq/model-picker.png)
+![OpenCode model picker showing PayPerQ and GPT-5 Nano](/blog-images/using-opencode-with-payperq/04-model-picker.png)
 
-You'll see all the PPQ models listed under the "ppq" provider. Select the model that best fits your coding task.
+You must see **PayPerQ** with **GPT-5 Nano** under it. Select it; the bar under the prompt then reads `Build · GPT-5 Nano PayPerQ`.
 
 ### 6. Verify Your Setup
 
-Once you start using OpenCode with PayPerQ models, you can verify that requests are being processed by checking your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
+Send a short test prompt:
+
+```
+Reply with the word OK
+```
+
+![OpenCode answering the test prompt through PayPerQ](/blog-images/using-opencode-with-payperq/05-test-answer.png)
+
+You can also check the setup from a normal terminal:
+
+```bash
+opencode providers list
+opencode models ppq
+```
+
+You should see `ppq api` under the credentials in `~/.local/share/opencode/auth.json`, and `ppq/openai/gpt-5-nano` in the model list.
+
+![opencode providers list and opencode models ppq](/blog-images/using-opencode-with-payperq/06-providers-list.png)
+
+Requests also show up in your usage history at [ppq.ai/account-activity](https://ppq.ai/account-activity).
 
 ## Available Models
 
-The configuration includes all Zen-recommended models that are available through PayPerQ:
-
-- **Claude:** Sonnet 4.6, Opus 4.6, Haiku 4.5
-- **GPT:** GPT-5.4, GPT-5.3 Codex, GPT-5.1 Codex
-- **Gemini:** 3 Pro, 3 Flash
-- **Coding:** Grok Code Fast
-- **Reasoning:** Kimi K2.6
-- **And many more through the full model list**
-
-Each model has been tested and verified to work with OpenCode through PayPerQ's API.
+You can add model IDs from the [PayPerQ catalog](https://api.ppq.ai/v1/models) to the `models` section of `opencode.json`. For a coding agent, prefer models whose `supported_parameters` include `tools`.
 
 ## Get the Most Recent Models
 
-Want to create your own configuration with the latest models? You can fetch the most up-to-date list of available models directly from PayPerQ's API:
+To see the up-to-date list of models directly from PayPerQ's API:
 
-**View all available models:**
 ```bash
 curl https://api.ppq.ai/v1/models
 ```
 
-This endpoint returns a JSON list of all currently available models on PayPerQ. You can use this to:
-
-1. **Check for new models** - See what's been added since this guide was published
-2. **Build custom configs** - Create your own `opencode.json` with specific models you want
-3. **Stay updated** - Always have access to the latest AI models as they're released
+This endpoint returns a JSON list of all currently available models. You can use it to check for new models and to build your own `opencode.json` with the models you want.
 
 ### Let AI Update Your Configuration Automatically
 
-The easiest way to keep your `opencode.json` file up-to-date is to ask an AI model on PPQ to do it for you! Here's how:
+You can ask an AI model on PPQ to build the `models` section for you:
 
 1. **Visit the models API endpoint** in your browser: [https://api.ppq.ai/v1/models](https://api.ppq.ai/v1/models)
-
-2. **Copy the entire JSON response** from the browser page (Ctrl+A or Cmd+A to select all, then copy)
-
+2. **Copy the entire JSON response** (Ctrl+A or Cmd+A to select all, then copy)
 3. **Go to [ppq.ai](https://ppq.ai)** and start a new chat with any AI model
-
 4. **Paste this prompt along with the models data:**
 
 ```
@@ -242,58 +177,45 @@ I have this list of models from the PPQ API:
 
 [PASTE THE JSON RESPONSE HERE]
 
-Please create an OpenCode configuration file using this EXACT structure. For each model in the API response, extract ONLY the "id" field and add it to the models section:
+Please create an OpenCode configuration file using this EXACT structure. For each model in the API response that I list below, extract ONLY the "id" field and add it to the models section:
 
 {
   "$schema": "https://opencode.ai/config.json",
   "provider": {
     "ppq": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "ppq",
+      "name": "PayPerQ",
       "options": {
-        "baseURL": "https://api.ppq.ai",
-        "apiKey": "sk-YOUR_API_KEY_HERE",
-        "includeUsage": true
+        "baseURL": "https://api.ppq.ai/v1"
       },
       "models": {
-        "z-ai/glm-4.6": {
-          "name": "z-ai/glm-4.6"
-        },
-        "anthropic/claude-sonnet-4": {
-          "name": "anthropic/claude-sonnet-4"
-        },
-        "gpt-5.1-codex": {
-          "name": "gpt-5.1-codex"
+        "openai/gpt-5-nano": {
+          "name": "openai/gpt-5-nano"
         }
       }
     }
   }
 }
 
-CRITICAL: Each model entry must have the model ID as BOTH the object key AND the "name" property value. Do NOT include any other fields from the API response (like "object", "created", "owned_by", etc.). ONLY use the "id" field.
+CRITICAL: Each model entry must have the model ID as the object key and a "name" property. Do NOT include any other fields from the API response. Do NOT add an apiKey.
 
-Process ALL models from the API response in this exact format.
+The models I want: [LIST THE MODEL IDS YOU WANT]
 ```
 
-5. **The AI will generate a complete configuration** with all current models
-6. **Copy the result** and save it as `opencode.json` in your OpenCode config folder
-7. **Replace `sk-YOUR_API_KEY_HERE`** with your actual API key from [ppq.ai/api-docs](https://ppq.ai/api-docs)
-
-This method ensures you always have access to the newest models without manually updating the configuration!
-
-**Or download the pre-configured file with all current models (as of March 13, 2026):**
-
-**[Download opencode.json with all current models](/blog-images/using-opencode-with-payperq/opencode.json)**
-
-Note: This file includes all models available at the time of publication. For the most up-to-date model list, use the AI method above or check the API endpoint directly.
+5. **Copy the result** and save it as `~/.config/opencode/opencode.json`, then connect your key with `/connect` as in step 5.
 
 ## Tips for Best Results
 
-- **Choose the right model:** Use specialized coding models like `openai/gpt-5.3-codex` or `x-ai/grok-code-fast-1` for programming tasks
-- **Try the free model:** Big Pickle is free on OpenCode and great for testing
-- **Monitor your usage:** Check your PayPerQ dashboard to track API usage and costs
-- **Experiment:** Different models excel at different tasks—try a few to find your favorite
+- **Choose the right model:** pick models whose catalog entry lists `tools` in `supported_parameters`, since OpenCode is a coding agent.
+- **Monitor your usage:** check [ppq.ai/account-activity](https://ppq.ai/account-activity) to track API usage and costs.
+- **Experiment:** different models excel at different tasks, so try a few to find your favorite.
+
+## Troubleshooting
+
+**HTTP 401 "Invalid API key":** PayPerQ returns this when the key is not found or has been revoked. Copy a current key from [ppq.ai/api-docs](https://ppq.ai/api-docs) or [ppq.ai/api-keys](https://ppq.ai/api-keys) and enter it again with `/connect`.
 
 ## Problems?
 
-Please contact us through the customer communication chatbot in the bottom right or in our telegram channel!
+Please contact us through the customer communication chatbot in the bottom right of the PayPerQ site, in our [Telegram channel](https://t.me/+ZjJDTazIrV0zNDFh) or on [Discord](https://discord.gg/BmMntEShYg).
+
+This guide is open source. If a step no longer works, open [the guide on GitHub](https://github.com/PayPerQ/ppq-integration-guides/blob/main/guides/using-opencode-with-payperq.md) and use the pencil icon to propose a fix, or [open an issue](https://github.com/PayPerQ/ppq-integration-guides/issues); changes go live after a PayPerQ maintainer reviews them.
