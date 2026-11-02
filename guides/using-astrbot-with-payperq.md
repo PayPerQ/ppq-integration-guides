@@ -4,7 +4,7 @@ slug: using-astrbot-with-payperq
 date: 2026-11-02
 image: /blog-images/using-astrbot-with-payperq/cover.jpg
 ogImage: /blog-images/using-astrbot-with-payperq/cover.jpg
-intro: Run your own AstrBot chatbot on pay-per-use PayPerQ models instead of a subscription: add PayPerQ as an OpenAI-compatible provider in the AstrBot WebUI and chat with it.
+intro: "Run your own AstrBot chatbot on pay-per-use PayPerQ models instead of a subscription: add PayPerQ as an OpenAI-compatible provider in the AstrBot WebUI and chat with it."
 author: PayPerQ
 tags:
   - Third Party Integrations
