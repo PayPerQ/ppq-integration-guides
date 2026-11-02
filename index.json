@@ -64,12 +64,13 @@
       "slug": "using-opencode-with-payperq",
       "title": "Using OpenCode AI Coding Agent with PayPerQ",
       "date": "2026-03-13",
+      "updated": "2026-11-02",
       "author": "Thomas Weiss",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
-      "ogImage": "/blog-images/using-opencode-with-payperq/opencode-wordmark-light.svg",
+      "image": "/blog-images/using-opencode-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-opencode-with-payperq/cover.jpg",
       "intro": "Learn how to integrate OpenCode, the open source AI coding agent, with PayPerQ to access premium AI models including Claude Sonnet 4.6, GPT-5.4, and Gemini 3.",
       "description": "",
       "path": "guides/using-opencode-with-payperq.md"
@@ -78,13 +79,14 @@
       "slug": "using-private-tee-models-with-openclaw",
       "title": "How to use PPQ's Private (TEE) AI models via our API and with OpenClaw",
       "date": "2026-03-06",
+      "updated": "2026-11-02",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations",
         "Privacy"
       ],
-      "image": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
-      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/openclaw_private_mode.webp",
+      "image": "/blog-images/using-private-tee-models-with-openclaw/cover.jpg",
+      "ogImage": "/blog-images/using-private-tee-models-with-openclaw/cover.jpg",
       "intro": "You can now use PPQ.AI's private encrypted models via API or in OpenClaw.",
       "description": "",
       "path": "guides/using-private-tee-models-with-openclaw.md"
@@ -107,12 +109,13 @@
       "slug": "using-openclaw-with-payperq",
       "title": "Using OpenClaw with PayPerQ",
       "date": "2026-01-30",
+      "updated": "2026-11-02",
       "author": "Matt Ahlborg",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
-      "ogImage": "/blog-images/using-openclaw-with-payperq/openclaw.webp",
+      "image": "/blog-images/using-openclaw-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openclaw-with-payperq/cover.jpg",
       "intro": "Learn how to configure OpenClaw (Clawdbot) to use PayPerQ's API for pay-per-use access to Claude and hundreds of other AI models.",
       "description": "",
       "path": "guides/using-openclaw-with-payperq.md"
