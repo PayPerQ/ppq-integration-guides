@@ -282,7 +282,7 @@ Endpoints: GET /v1/models, POST /v1/chat/completions (OpenAI), POST /v1/messages
 
 ### 2. Point Claude Code at the proxy
 
-The proxy prints the settings Claude Code needs: base URL `http://127.0.0.1:8787`, your PayPerQ key as the token, `private/glm-5-3` as the main model and `private/deepseek-v4-1-flash` as the small, fast model. It also prints: "glm-5-3 / deepseek-v4-1-flash / gpt-oss-120b / llama3-3-70b / kimi-k3 support tool calls". Because the settings-file value applies when a shell export sets the same variable, change the `env` block in `~/.claude/settings.json` instead of exporting:
+The proxy prints the settings Claude Code needs: base URL `http://127.0.0.1:8787`, your PayPerQ key as the token, `private/glm-5-3` as the main model and `private/deepseek-v4-1-flash` as the small, fast model. It also prints: "glm-5-3 / deepseek-v4-1-flash / gpt-oss-120b / llama3-3-70b / kimi-k3-1-pro support tool calls". Because the settings-file value applies when a shell export sets the same variable, change the `env` block in `~/.claude/settings.json` instead of exporting:
 
 ```json
 {

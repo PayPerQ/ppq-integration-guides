@@ -79,7 +79,7 @@ This is the list the proxy returned from `/v1/models` at the time of writing; th
 
 | Model | Best For |
 |-------|----------|
-| `private/kimi-k3` | Moonshot multimodal MoE model |
+| `private/kimi-k3-1-pro` | Moonshot's flagship for long-horizon coding and agentic work; reasoning on by default, 262K context |
 | `private/gpt-oss-120b` | Budget-friendly general use |
 | `private/llama3-3-70b` | Fast |
 | `private/glm-5-3` | Agentic engineering, long-horizon tool use, 1M context |

@@ -177,7 +177,7 @@ Don't want to pick a model yourself? [AutoClaw](/blog/using-autoclaw-with-payper
 
 Want maximum privacy? PayPerQ offers [TEE (Trusted Execution Environment) models](/blog/using-private-tee-models-with-openclaw) that encrypt your queries so neither PayPerQ nor anyone else can read them. Private models in the catalog include:
 
-- **private/kimi-k3**
+- **private/kimi-k3-1-pro**
 - **private/gpt-oss-120b**
 - **private/llama3-3-70b**
 - **private/glm-5-3**
