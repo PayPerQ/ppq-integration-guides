@@ -2,6 +2,20 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-openworker-with-payperq",
+      "title": "Using OpenWorker with PayPerQ",
+      "date": "2026-11-17",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-openworker-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openworker-with-payperq/cover.jpg",
+      "intro": "Run the OpenWorker desktop app on pay-per-use PayPerQ models by adding PayPerQ as an OpenAI-compatible provider in Settings.",
+      "description": "",
+      "path": "guides/using-openworker-with-payperq.md"
+    },
+    {
       "slug": "using-astrbot-with-payperq",
       "title": "Using AstrBot with PayPerQ",
       "date": "2026-11-02",
