@@ -2,6 +2,34 @@
   "version": 1,
   "guides": [
     {
+      "slug": "using-daily-stock-analysis-with-payperq",
+      "title": "Using Daily Stock Analysis with PayPerQ",
+      "date": "2026-11-17",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
+      "intro": "Run Daily Stock Analysis, the open-source LLM stock analyzer, on pay-per-use PayPerQ models instead of a subscription.",
+      "description": "",
+      "path": "guides/using-daily-stock-analysis-with-payperq.md"
+    },
+    {
+      "slug": "using-open-code-review-with-payperq",
+      "title": "Using Open Code Review with PayPerQ",
+      "date": "2026-11-17",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-open-code-review-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-open-code-review-with-payperq/cover.jpg",
+      "intro": "Run Open Code Review's AI code reviews on pay-per-use PayPerQ models instead of a separate provider subscription.",
+      "description": "",
+      "path": "guides/using-open-code-review-with-payperq.md"
+    },
+    {
       "slug": "using-openbot-with-payperq",
       "title": "Using OpenBot with PayPerQ",
       "date": "2026-11-17",
@@ -14,6 +42,34 @@
       "intro": "Run the OpenBot desktop app on pay-per-use PayPerQ models by adding PayPerQ as an OpenAI-compatible endpoint in OpenBot's setup.",
       "description": "",
       "path": "guides/using-openbot-with-payperq.md"
+    },
+    {
+      "slug": "using-openworker-with-payperq",
+      "title": "Using OpenWorker with PayPerQ",
+      "date": "2026-11-17",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-openworker-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openworker-with-payperq/cover.jpg",
+      "intro": "Run the OpenWorker desktop app on pay-per-use PayPerQ models by adding PayPerQ as an OpenAI-compatible provider in Settings.",
+      "description": "",
+      "path": "guides/using-openworker-with-payperq.md"
+    },
+    {
+      "slug": "using-qwen-code-with-payperq",
+      "title": "Using Qwen Code with PayPerQ",
+      "date": "2026-11-17",
+      "author": "PayPerQ",
+      "tags": [
+        "Third Party Integrations"
+      ],
+      "image": "/blog-images/using-qwen-code-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-qwen-code-with-payperq/cover.jpg",
+      "intro": "Run the Qwen Code terminal coding agent on pay-per-use PayPerQ models instead of a subscription, using its built-in Custom Provider setup.",
+      "description": "",
+      "path": "guides/using-qwen-code-with-payperq.md"
     },
     {
       "slug": "using-astrbot-with-payperq",
