@@ -2,18 +2,18 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-daily-stock-analysis-with-payperq",
-      "title": "Using Daily Stock Analysis with PayPerQ",
+      "slug": "using-openbot-with-payperq",
+      "title": "Using OpenBot with PayPerQ",
       "date": "2026-11-17",
       "author": "PayPerQ",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
-      "ogImage": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
-      "intro": "Run Daily Stock Analysis, the open-source LLM stock analyzer, on pay-per-use PayPerQ models instead of a subscription.",
+      "image": "/blog-images/using-openbot-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-openbot-with-payperq/cover.jpg",
+      "intro": "Run the OpenBot desktop app on pay-per-use PayPerQ models by adding PayPerQ as an OpenAI-compatible endpoint in OpenBot's setup.",
       "description": "",
-      "path": "guides/using-daily-stock-analysis-with-payperq.md"
+      "path": "guides/using-openbot-with-payperq.md"
     },
     {
       "slug": "using-astrbot-with-payperq",
