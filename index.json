@@ -2,18 +2,18 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-qwen-code-with-payperq",
-      "title": "Using Qwen Code with PayPerQ",
+      "slug": "using-open-code-review-with-payperq",
+      "title": "Using Open Code Review with PayPerQ",
       "date": "2026-11-17",
       "author": "PayPerQ",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-qwen-code-with-payperq/cover.jpg",
-      "ogImage": "/blog-images/using-qwen-code-with-payperq/cover.jpg",
-      "intro": "Run the Qwen Code terminal coding agent on pay-per-use PayPerQ models instead of a subscription, using its built-in Custom Provider setup.",
+      "image": "/blog-images/using-open-code-review-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-open-code-review-with-payperq/cover.jpg",
+      "intro": "Run Open Code Review's AI code reviews on pay-per-use PayPerQ models instead of a separate provider subscription.",
       "description": "",
-      "path": "guides/using-qwen-code-with-payperq.md"
+      "path": "guides/using-open-code-review-with-payperq.md"
     },
     {
       "slug": "using-astrbot-with-payperq",
