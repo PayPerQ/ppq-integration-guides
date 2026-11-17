@@ -2,18 +2,18 @@
   "version": 1,
   "guides": [
     {
-      "slug": "using-openworker-with-payperq",
-      "title": "Using OpenWorker with PayPerQ",
+      "slug": "using-daily-stock-analysis-with-payperq",
+      "title": "Using Daily Stock Analysis with PayPerQ",
       "date": "2026-11-17",
       "author": "PayPerQ",
       "tags": [
         "Third Party Integrations"
       ],
-      "image": "/blog-images/using-openworker-with-payperq/cover.jpg",
-      "ogImage": "/blog-images/using-openworker-with-payperq/cover.jpg",
-      "intro": "Run the OpenWorker desktop app on pay-per-use PayPerQ models by adding PayPerQ as an OpenAI-compatible provider in Settings.",
+      "image": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
+      "ogImage": "/blog-images/using-daily-stock-analysis-with-payperq/cover.jpg",
+      "intro": "Run Daily Stock Analysis, the open-source LLM stock analyzer, on pay-per-use PayPerQ models instead of a subscription.",
       "description": "",
-      "path": "guides/using-openworker-with-payperq.md"
+      "path": "guides/using-daily-stock-analysis-with-payperq.md"
     },
     {
       "slug": "using-astrbot-with-payperq",
